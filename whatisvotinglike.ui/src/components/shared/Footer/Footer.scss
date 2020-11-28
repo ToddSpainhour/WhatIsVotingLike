@@ -1,6 +1,8 @@
+@import '../../../styles/variables';
+
 .Footer {
   display: block;
-  background-color: grey;
+  background-color: $dark-purple;
   position: absolute;
   bottom: 0;
   width: 100%;
