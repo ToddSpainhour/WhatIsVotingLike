@@ -9,7 +9,10 @@ class Conclusion extends React.Component {
     return (
       <div className="Conclusion">
         <h5>Conclusion</h5>
-        <Link to="/home" className="btn btn-warning">To Home</Link>
+        <div className="module-navigation  d-flex justify-content-sm-end justify-content-center">
+          <Link to='./intro' className="btn btn-light m-3">Previous</Link>
+          <Link to='./home' className="btn btn-light m-3">Next</Link>
+        </div>
       </div>
     );
   }
