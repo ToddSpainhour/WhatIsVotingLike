@@ -1,8 +1,11 @@
+@import '../../../styles/variables';
+
 .Intro {
   display: block;
+  color: $text;
 
   .module-navigation {
-    background-color: cornflowerblue;
+    background-color: $border;
     position: absolute;
     bottom: 2rem;
     width: 100%;
