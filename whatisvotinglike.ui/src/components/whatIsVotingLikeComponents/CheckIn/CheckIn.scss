@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.CheckIn {
+  display: block;
+  color: $text;
+  background-color: $background;
+  height: 100vh;
+
+  .module-navigation {
+    background-color: $border;
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+  }
+}
