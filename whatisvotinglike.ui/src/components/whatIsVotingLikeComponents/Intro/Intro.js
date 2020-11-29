@@ -11,7 +11,7 @@ class Intro extends React.Component {
         <h5>Intro</h5>
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./home' className="btn btn-light m-3">Previous</Link>
-          <Link to='./conclusion' className="btn btn-light m-3">Next</Link>
+          <Link to='./disclaimer' className="btn btn-light m-3">Next</Link>
         </div>
       </div>
     );
