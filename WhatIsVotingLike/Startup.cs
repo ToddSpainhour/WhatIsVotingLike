@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WhatIsVotingLike.Data;
 
 namespace WhatIsVotingLike
 {
@@ -26,6 +27,9 @@ namespace WhatIsVotingLike
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddTransient<TrainingModuleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +45,8 @@ namespace WhatIsVotingLike
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {
