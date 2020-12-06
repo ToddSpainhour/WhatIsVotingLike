@@ -6,6 +6,12 @@
   background-color: $background;
   height: 100vh;
 
+  .module-cards-container {
+    background-color: $purple;
+    display: flex;
+    justify-content: center;
+  }
+
   .module-navigation {
     background-color: $border;
     position: absolute;

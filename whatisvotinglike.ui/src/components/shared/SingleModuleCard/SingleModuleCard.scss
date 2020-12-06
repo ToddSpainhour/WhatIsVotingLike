@@ -1,5 +1,17 @@
+@import '../../../styles/variables';
+
 .SingleModuleCard {
-  display: block;
-  color: grey;
-  background-color: snow;
+  color: $text;
+  background-color: $border;
+  margin: 2rem 0 2rem 0;
+  border-radius: 10px;
+
+  .start-training-btn {
+    background-color: $green;
+    &:hover {
+      color: $text;
+      background-color: $dark-purple;
+    }
+  }
 }
+
