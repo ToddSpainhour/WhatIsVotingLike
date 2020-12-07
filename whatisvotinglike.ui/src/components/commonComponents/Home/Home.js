@@ -16,9 +16,14 @@ class Home extends React.Component {
       .catch((err) => console.error('unable to get modules: ', err));
   }
 
+  getSlides = (selectedTrainingModuleId) => {
+    console.log('inside Home getSlides selectedTrainingModuleId is: ', selectedTrainingModuleId);
+    trainingModulesData.getAllSlidesForSelectedTrainingModule(selectedTrainingModuleId);
+  }
+
   render() {
     const { trainingModules } = this.state;
-    const buildModuleCards = trainingModules.map((module) => <SingleModuleCard module={module} key={module.trainingModuleId}/>);
+    const buildModuleCards = trainingModules.map((module) => <SingleModuleCard module={module} getSlides={this.getSlides} key={module.trainingModuleId}/>);
 
     return (
       <div className="Home">

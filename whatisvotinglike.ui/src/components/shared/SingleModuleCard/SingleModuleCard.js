@@ -4,11 +4,17 @@ import './SingleModuleCard.scss';
 
 class SingleModuleCard extends React.Component {
   render() {
+    const loadSelectedModule = () => {
+      console.log('SingleModuleCard SelectedTrainingModuleId is:', this.props.module.trainingModuleId);
+      const selectedTrainingModuleId = this.props.module.trainingModuleId;
+      this.props.getSlides(selectedTrainingModuleId);
+    };
+
     return (
       <div className="SingleModuleCard col-md-5 col-sm-12">
         <h5>Module Title: {this.props.module.title}</h5>
         <p>{this.props.module.description}</p>
-        <button className="btn btn-small start-training-btn">Start Training</button>
+        <button onClick={loadSelectedModule} className="btn btn-small start-training-btn">Start Training</button>
       </div>
     );
   }
