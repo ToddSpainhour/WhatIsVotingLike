@@ -8,7 +8,10 @@ import SingleModuleCard from '../../shared/SingleModuleCard/SingleModuleCard';
 import './Home.scss';
 
 class Home extends React.Component {
-  state = { trainingModules: [] };
+  state = {
+    trainingModules: [],
+    slides: [],
+  };
 
   componentDidMount() {
     trainingModulesData.getAllTrainingModules()
@@ -17,8 +20,10 @@ class Home extends React.Component {
   }
 
   getSlides = (selectedTrainingModuleId) => {
-    console.log('inside Home getSlides selectedTrainingModuleId is: ', selectedTrainingModuleId);
-    trainingModulesData.getAllSlidesForSelectedTrainingModule(selectedTrainingModuleId);
+    trainingModulesData.getAllSlidesForSelectedTrainingModule(selectedTrainingModuleId)
+      .then((slides) => {
+        this.setState({ slides });
+      });
   }
 
   render() {

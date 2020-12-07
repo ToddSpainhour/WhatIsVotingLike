@@ -12,8 +12,6 @@ const getAllTrainingModules = () => new Promise((resolve, reject) => {
 });
 
 const getAllSlidesForSelectedTrainingModule = (selectedTrainingModuleId) => new Promise((resolve, reject) => {
-  console.log(`${baseUrl}/slides/${selectedTrainingModuleId}`);
-
   axios.get(`${baseUrl}/slides/${selectedTrainingModuleId}`)
     .then((response) => {
       const slides = response.data;

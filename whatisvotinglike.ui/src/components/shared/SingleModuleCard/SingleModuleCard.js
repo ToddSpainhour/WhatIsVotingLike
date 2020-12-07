@@ -5,7 +5,6 @@ import './SingleModuleCard.scss';
 class SingleModuleCard extends React.Component {
   render() {
     const loadSelectedModule = () => {
-      console.log('SingleModuleCard SelectedTrainingModuleId is:', this.props.module.trainingModuleId);
       const selectedTrainingModuleId = this.props.module.trainingModuleId;
       this.props.getSlides(selectedTrainingModuleId);
     };
