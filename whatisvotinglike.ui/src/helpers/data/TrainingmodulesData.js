@@ -11,4 +11,13 @@ const getAllTrainingModules = () => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getAllTrainingModules };
+const getAllSlidesForSelectedTrainingModule = (selectedTrainingModuleId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/slides/${selectedTrainingModuleId}`)
+    .then((response) => {
+      const slides = response.data;
+      resolve(slides);
+    })
+    .catch((err) => reject(err));
+});
+
+export default { getAllTrainingModules, getAllSlidesForSelectedTrainingModule };
