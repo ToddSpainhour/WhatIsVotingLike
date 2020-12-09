@@ -49,15 +49,31 @@ render() {
       <React.Fragment>
         <Switch>
           <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
-          <Route path='/intro' component={Intro}/>
-          <Route path='/disclaimer' component={Disclaimer}/>
-          <Route path='/register' component={Register}/>
-          <Route path='/outsidePollingPlace' component={OutsidePollingPlace}/>
-          <Route path='/insidePollingPlace' component={InsidePollingPlace}/>
-          <Route path='/checkIn' component={CheckIn}/>
-          <Route path='/votingMachine' component={VotingMachine}/>
-          <Route path='/sticker' component={Sticker}/>
-          <Route path='/conclusion' component={Conclusion}/>
+
+          <Route path='/intro' render={(props) => <Intro {...props} slides={this.state.slides}/>} />
+
+          <Route path='/disclaimer' render={(props) => <Disclaimer {...props} slides={this.state.slides}/>} />
+
+          <Route path='/register' render={(props) => <Register {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/outsidePollingPlace' component={OutsidePollingPlace}/> */}
+          <Route path='/outsidePollingPlace' render={(props) => <OutsidePollingPlace {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/insidePollingPlace' component={InsidePollingPlace}/> */}
+          <Route path='/insidePollingPlace' render={(props) => <InsidePollingPlace {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/checkIn' component={CheckIn}/> */}
+          <Route path='/checkIn' render={(props) => <CheckIn {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/votingMachine' component={VotingMachine}/> */}
+          <Route path='/votingMachine' render={(props) => <VotingMachine {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/sticker' component={Sticker}/> */}
+          <Route path='/sticker' render={(props) => <Sticker {...props} slides={this.state.slides}/>} />
+
+          {/* <Route path='/conclusion' component={Conclusion}/> */}
+          <Route path='/conclusion' render={(props) => <Conclusion {...props} slides={this.state.slides}/>} />
+
           <Redirect from="*" to="/home" />
         </Switch>
       </React.Fragment>
