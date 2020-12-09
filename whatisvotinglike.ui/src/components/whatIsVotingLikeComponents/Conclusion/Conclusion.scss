@@ -4,10 +4,11 @@
   display: block;
   color: $text;
 
-  .module-navigation {
-    background-color: $border;
-    position: absolute;
-    bottom: 2rem;
-    width: 100%;
+  .complete-training-button {
+    background-color: $green;
+    &:hover {
+      color: $text;
+      background-color: $dark-purple;
+    }
   }
 }
