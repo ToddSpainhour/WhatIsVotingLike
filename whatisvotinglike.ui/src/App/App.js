@@ -7,6 +7,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
+import trainingModulesData from '../helpers/data/TrainingmodulesData';
+
 import './App.scss';
 
 import Home from '../components/commonComponents/Home/Home';
@@ -22,30 +24,48 @@ import Conclusion from '../components/whatIsVotingLikeComponents/Conclusion/Conc
 import Footer from '../components/shared/Footer/Footer';
 
 class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <BrowserRouter>
-        <React.Fragment>
-          <Switch>
-            <Route path='/home' component={Home}/>
-            <Route path='/intro' component={Intro}/>
-            <Route path='/disclaimer' component={Disclaimer}/>
-            <Route path='/register' component={Register}/>
-            <Route path='/outsidePollingPlace' component={OutsidePollingPlace}/>
-            <Route path='/insidePollingPlace' component={InsidePollingPlace}/>
-            <Route path='/checkIn' component={CheckIn}/>
-            <Route path='/votingMachine' component={VotingMachine}/>
-            <Route path='/sticker' component={Sticker}/>
-            <Route path='/conclusion' component={Conclusion}/>
-            <Redirect from="*" to="/home" />
-          </Switch>
-        </React.Fragment>
-        </BrowserRouter>
-        <Footer />
-      </div>
-    );
-  }
+state = {
+  trainingModules: [],
+  slides: [],
+};
+
+componentDidMount() {
+  trainingModulesData.getAllTrainingModules()
+    .then((trainingModules) => this.setState({ trainingModules }))
+    .catch((err) => console.error('unable to get modules: ', err));
+}
+
+getSlides = (selectedTrainingModuleId) => {
+  trainingModulesData.getAllSlidesForSelectedTrainingModule(selectedTrainingModuleId)
+    .then((slides) => {
+      this.setState({ slides });
+    });
+}
+
+render() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+      <React.Fragment>
+        <Switch>
+          <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
+          <Route path='/intro' component={Intro}/>
+          <Route path='/disclaimer' component={Disclaimer}/>
+          <Route path='/register' component={Register}/>
+          <Route path='/outsidePollingPlace' component={OutsidePollingPlace}/>
+          <Route path='/insidePollingPlace' component={InsidePollingPlace}/>
+          <Route path='/checkIn' component={CheckIn}/>
+          <Route path='/votingMachine' component={VotingMachine}/>
+          <Route path='/sticker' component={Sticker}/>
+          <Route path='/conclusion' component={Conclusion}/>
+          <Redirect from="*" to="/home" />
+        </Switch>
+      </React.Fragment>
+      </BrowserRouter>
+      <Footer />
+    </div>
+  );
+}
 }
 
 export default App;
