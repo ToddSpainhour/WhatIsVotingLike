@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import { Link } from 'react-router-dom';
-
 import SingleModuleCard from '../../shared/SingleModuleCard/SingleModuleCard';
 
 import './Home.scss';
