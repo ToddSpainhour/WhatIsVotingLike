@@ -27,6 +27,7 @@ class App extends React.Component {
 state = {
   trainingModules: [],
   slides: [],
+  introComplete: false,
 };
 
 componentDidMount() {
@@ -42,6 +43,10 @@ getSlides = (selectedTrainingModuleId) => {
     });
 }
 
+ChangeIntroCompletedStatus = () => {
+  this.setState({ introComplete: true });
+}
+
 render() {
   return (
     <div className="App">
@@ -51,7 +56,13 @@ render() {
 
           <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
 
-          <Route path='/intro' render={(props) => <Intro {...props} slides={this.state.slides}/>} />
+          <Route path='/intro'
+            render={(props) => <Intro {...props}
+            slides={this.state.slides}
+            ChangeIntroCompletedStatus={this.ChangeIntroCompletedStatus}
+            introComplete={this.state.introComplete}
+            />}
+          />
 
           <Route path='/disclaimer' render={(props) => <Disclaimer {...props} slides={this.state.slides}/>} />
 
