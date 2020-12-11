@@ -8,7 +8,7 @@ class Intro extends React.Component {
   render() {
     let nextButton;
     if (this.props.introComplete === true) {
-      nextButton = <Link to='./disclaimer' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./register' className="btn btn-light m-3 next-button">Active Next</Link>;
     } else {
       nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
     }
@@ -21,7 +21,7 @@ class Intro extends React.Component {
         <button onClick={this.props.ChangeIntroCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./home' className="btn btn-light m-3 previous-button">Previous</Link>
+          <Link to='./disclaimer' className="btn btn-light m-3 previous-button">Previous</Link>
           {nextButton}
         </div>
       </div>
