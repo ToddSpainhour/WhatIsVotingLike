@@ -32,6 +32,7 @@ state = {
   registerComplete: false,
   outsideComplete: false,
   insideComplete: false,
+  checkInComplete: false,
 };
 
 componentDidMount() {
@@ -65,6 +66,10 @@ ChangeOutsideCompletedStatus = () => {
 
 ChangeInsideCompletedStatus = () => {
   this.setState({ insideComplete: true });
+}
+
+ChangeCheckInCompletedStatus = () => {
+  this.setState({ checkInComplete: true });
 }
 
 render() {
@@ -116,7 +121,11 @@ render() {
             />}
           />
 
-          <Route path='/checkIn' render={(props) => <CheckIn {...props} slides={this.state.slides}/>} />
+          <Route path='/checkIn'
+            render={(props) => <CheckIn {...props}
+            slides={this.state.slides}
+            ChangeCheckInCompletedStatus={this.ChangeCheckInCompletedStatus}
+            checkInComplete={this.state.checkInComplete}/>} />
 
           <Route path='/votingMachine' render={(props) => <VotingMachine {...props} slides={this.state.slides}/>} />
 
