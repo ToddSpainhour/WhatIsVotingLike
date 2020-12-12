@@ -34,6 +34,7 @@ state = {
   insideComplete: false,
   checkInComplete: false,
   votingMachineComplete: false,
+  stickerComplete: false,
 };
 
 componentDidMount() {
@@ -75,6 +76,10 @@ ChangeCheckInCompletedStatus = () => {
 
 ChangeVotingMachineCompletedStatus = () => {
   this.setState({ votingMachineComplete: true });
+}
+
+ChangeStickerCompletedStatus = () => {
+  this.setState({ stickerComplete: true });
 }
 
 render() {
@@ -142,7 +147,13 @@ render() {
             />}
           />
 
-          <Route path='/sticker' render={(props) => <Sticker {...props} slides={this.state.slides}/>} />
+          <Route path='/sticker'
+            render={(props) => <Sticker {...props}
+            slides={this.state.slides}
+            ChangeStickerCompletedStatus={this.ChangeStickerCompletedStatus}
+            stickerComplete={this.state.stickerComplete}
+            />}
+          />
 
           <Route path='/conclusion' render={(props) => <Conclusion {...props} slides={this.state.slides}/>} />
 
