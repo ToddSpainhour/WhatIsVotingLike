@@ -28,6 +28,13 @@ state = {
   trainingModules: [],
   slides: [],
   introComplete: false,
+  disclaimerComplete: false,
+  registerComplete: false,
+  outsideComplete: false,
+  insideComplete: false,
+  checkInComplete: false,
+  votingMachineComplete: false,
+  stickerComplete: false,
 };
 
 componentDidMount() {
@@ -43,8 +50,36 @@ getSlides = (selectedTrainingModuleId) => {
     });
 }
 
+ChangeDisclaimerCompletedStatus = () => {
+  this.setState({ disclaimerComplete: true });
+}
+
 ChangeIntroCompletedStatus = () => {
   this.setState({ introComplete: true });
+}
+
+ChangeRegisterCompletedStatus = () => {
+  this.setState({ registerComplete: true });
+}
+
+ChangeOutsideCompletedStatus = () => {
+  this.setState({ outsideComplete: true });
+}
+
+ChangeInsideCompletedStatus = () => {
+  this.setState({ insideComplete: true });
+}
+
+ChangeCheckInCompletedStatus = () => {
+  this.setState({ checkInComplete: true });
+}
+
+ChangeVotingMachineCompletedStatus = () => {
+  this.setState({ votingMachineComplete: true });
+}
+
+ChangeStickerCompletedStatus = () => {
+  this.setState({ stickerComplete: true });
 }
 
 render() {
@@ -56,6 +91,14 @@ render() {
 
           <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
 
+          <Route path='/disclaimer'
+            render={(props) => <Disclaimer {...props}
+            slides={this.state.slides}
+            ChangeDisclaimerCompletedStatus={this.ChangeDisclaimerCompletedStatus}
+            disclaimerComplete={this.state.disclaimerComplete}
+            />}
+          />
+
           <Route path='/intro'
             render={(props) => <Intro {...props}
             slides={this.state.slides}
@@ -64,19 +107,53 @@ render() {
             />}
           />
 
-          <Route path='/disclaimer' render={(props) => <Disclaimer {...props} slides={this.state.slides}/>} />
+          <Route path='/register'
+            render={(props) => <Register {...props}
+            slides={this.state.slides}
+            ChangeRegisterCompletedStatus={this.ChangeRegisterCompletedStatus}
+            registerComplete={this.state.registerComplete}
+            />}
+          />
 
-          <Route path='/register' render={(props) => <Register {...props} slides={this.state.slides}/>} />
+          <Route path='/outsidePollingPlace'
+            render={(props) => <OutsidePollingPlace {...props}
+            slides={this.state.slides}
+            ChangeOutsideCompletedStatus={this.ChangeOutsideCompletedStatus}
+            outsideComplete={this.state.outsideComplete}
+            />}
+          />
 
-          <Route path='/outsidePollingPlace' render={(props) => <OutsidePollingPlace {...props} slides={this.state.slides}/>} />
+          <Route path='/insidePollingPlace'
+            render={(props) => <InsidePollingPlace {...props}
+            slides={this.state.slides}
+            ChangeInsideCompletedStatus={this.ChangeInsideCompletedStatus}
+            insideComplete={this.state.insideComplete}
+            />}
+          />
 
-          <Route path='/insidePollingPlace' render={(props) => <InsidePollingPlace {...props} slides={this.state.slides}/>} />
+          <Route path='/checkIn'
+            render={(props) => <CheckIn {...props}
+            slides={this.state.slides}
+            ChangeCheckInCompletedStatus={this.ChangeCheckInCompletedStatus}
+            checkInComplete={this.state.checkInComplete}
+            />}
+          />
 
-          <Route path='/checkIn' render={(props) => <CheckIn {...props} slides={this.state.slides}/>} />
+          <Route path='/votingMachine'
+            render={(props) => <VotingMachine {...props}
+            slides={this.state.slides}
+            ChangeVotingMachineCompletedStatus={this.ChangeVotingMachineCompletedStatus}
+            votingMachineComplete={this.state.votingMachineComplete}
+            />}
+          />
 
-          <Route path='/votingMachine' render={(props) => <VotingMachine {...props} slides={this.state.slides}/>} />
-
-          <Route path='/sticker' render={(props) => <Sticker {...props} slides={this.state.slides}/>} />
+          <Route path='/sticker'
+            render={(props) => <Sticker {...props}
+            slides={this.state.slides}
+            ChangeStickerCompletedStatus={this.ChangeStickerCompletedStatus}
+            stickerComplete={this.state.stickerComplete}
+            />}
+          />
 
           <Route path='/conclusion' render={(props) => <Conclusion {...props} slides={this.state.slides}/>} />
 
