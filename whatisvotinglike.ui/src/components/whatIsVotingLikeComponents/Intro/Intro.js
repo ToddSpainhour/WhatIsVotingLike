@@ -8,23 +8,25 @@ class Intro extends React.Component {
   render() {
     let nextButton;
     if (this.props.introComplete === true) {
-      nextButton = <Link to='./register' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./register' className="btn btn-success m-3 next-button">Active Next</Link>;
     } else {
-      nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+      nextButton = <button className="btn btn-warning m-3 disabled-next-button">Disabled Next</button>;
     }
 
     return (
-      <div className="Intro">
-        <h5>Intro</h5>
-        <h6>Some slides will disable the next button until the user performs some action.</h6>
-        <p>Current IsSlideComplete status: {this.props.introComplete.toString()}</p>
-        <button onClick={this.props.ChangeIntroCompletedStatus} >Click to fulfill slide requirements</button>
+      <main className="Intro">
+        <h2>{this.props.slides[0].slideTitle}</h2>
 
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
+        <article>
+          <h5>{this.props.slides[0].slideBodyText}</h5>
+        <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
+        </article>
+
+        <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./disclaimer' className="btn btn-light m-3 previous-button">Previous</Link>
           {nextButton}
-        </div>
-      </div>
+        </nav>
+      </main>
     );
   }
 }
