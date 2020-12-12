@@ -30,6 +30,7 @@ state = {
   introComplete: false,
   disclaimerComplete: false,
   registerComplete: false,
+  outsideComplete: false,
 };
 
 componentDidMount() {
@@ -55,6 +56,10 @@ ChangeIntroCompletedStatus = () => {
 
 ChangeRegisterCompletedStatus = () => {
   this.setState({ registerComplete: true });
+}
+
+ChangeOutsideCompletedStatus = () => {
+  this.setState({ outsideComplete: true });
 }
 
 render() {
@@ -90,7 +95,13 @@ render() {
             />}
           />
 
-          <Route path='/outsidePollingPlace' render={(props) => <OutsidePollingPlace {...props} slides={this.state.slides}/>} />
+          <Route path='/outsidePollingPlace'
+            render={(props) => <OutsidePollingPlace {...props}
+            slides={this.state.slides}
+            ChangeOutsideCompletedStatus={this.ChangeOutsideCompletedStatus}
+            outsideComplete={this.state.outsideComplete}
+            />}
+          />
 
           <Route path='/insidePollingPlace' render={(props) => <InsidePollingPlace {...props} slides={this.state.slides}/>} />
 
