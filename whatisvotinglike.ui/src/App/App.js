@@ -28,6 +28,7 @@ state = {
   trainingModules: [],
   slides: [],
   introComplete: false,
+  disclaimerComplete: false,
 };
 
 componentDidMount() {
@@ -43,6 +44,10 @@ getSlides = (selectedTrainingModuleId) => {
     });
 }
 
+ChangeDisclaimerCompletedStatus = () => {
+  this.setState({ disclaimerComplete: true });
+}
+
 ChangeIntroCompletedStatus = () => {
   this.setState({ introComplete: true });
 }
@@ -56,6 +61,14 @@ render() {
 
           <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
 
+          <Route path='/disclaimer'
+            render={(props) => <Disclaimer {...props}
+            slides={this.state.slides}
+            ChangeDisclaimerCompletedStatus={this.ChangeDisclaimerCompletedStatus}
+            disclaimerComplete={this.state.disclaimerComplete}
+            />}
+          />
+
           <Route path='/intro'
             render={(props) => <Intro {...props}
             slides={this.state.slides}
@@ -63,8 +76,6 @@ render() {
             introComplete={this.state.introComplete}
             />}
           />
-
-          <Route path='/disclaimer' render={(props) => <Disclaimer {...props} slides={this.state.slides}/>} />
 
           <Route path='/register' render={(props) => <Register {...props} slides={this.state.slides}/>} />
 
