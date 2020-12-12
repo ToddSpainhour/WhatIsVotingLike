@@ -6,6 +6,10 @@
   background-color: $background;
   height: 100vh;
 
+  .disclaimer-image {
+    width: auto;
+  }
+
   .module-navigation {
     background-color: $border;
     position: absolute;
