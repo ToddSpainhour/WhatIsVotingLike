@@ -29,6 +29,7 @@ state = {
   slides: [],
   introComplete: false,
   disclaimerComplete: false,
+  registerComplete: false,
 };
 
 componentDidMount() {
@@ -50,6 +51,10 @@ ChangeDisclaimerCompletedStatus = () => {
 
 ChangeIntroCompletedStatus = () => {
   this.setState({ introComplete: true });
+}
+
+ChangeRegisterCompletedStatus = () => {
+  this.setState({ registerComplete: true });
 }
 
 render() {
@@ -77,7 +82,13 @@ render() {
             />}
           />
 
-          <Route path='/register' render={(props) => <Register {...props} slides={this.state.slides}/>} />
+          <Route path='/register'
+            render={(props) => <Register {...props}
+            slides={this.state.slides}
+            ChangeRegisterCompletedStatus={this.ChangeRegisterCompletedStatus}
+            registerComplete={this.state.registerComplete}
+            />}
+          />
 
           <Route path='/outsidePollingPlace' render={(props) => <OutsidePollingPlace {...props} slides={this.state.slides}/>} />
 
