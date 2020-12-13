@@ -14,9 +14,9 @@ class OutsidePollingPlace extends React.Component {
     }
     return (
       <main className="OutsidePollingPlace">
-        <h5>{this.props.slides[3].slideTitle}</h5>
+        <h2>{this.props.slides[3].slideTitle}</h2>
           <article>
-          <h6>{this.props.slides[3].slideBodyText}</h6>
+          <h5>{this.props.slides[3].slideBodyText}</h5>
           <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
           </article>
 
