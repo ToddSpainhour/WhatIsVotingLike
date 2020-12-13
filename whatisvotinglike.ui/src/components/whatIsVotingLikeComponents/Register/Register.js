@@ -13,18 +13,28 @@ class Register extends React.Component {
       nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
     }
     return (
-      <div className="Register">
-        <h5>Register</h5>
-        <h6>Some slides will disable the next button until the user performs some action.</h6>
-        <p>Current disclaimerComplete status: {this.props.registerComplete.toString()}</p>
-
+      <main className="Register">
+        <h2>{this.props.slides[2].slideTitle}</h2>
+        <article>
+          <h5>{this.props.slides[2].slideBodyText}</h5>
+          <div className="register-button-container">
+            <div>
+              <h6>Need to register to vote in Tennessee?</h6>
+              <a className="btn btn-light" href="https://ovr.govote.tn.gov/" target="_blank" rel="noreferrer nofollow">Visit Tennessee's Online Voter Registration Portal.</a>
+            </div>
+            <div>
+              <h6>Already registered? Confirm your registration by clicking the link below.</h6>
+              <a className="btn btn-light" href="https://tnmap.tn.gov/voterlookup/" target="_blank" rel="noreferrer nofollow">Confirm Your Registration in Tennessee.</a>
+            </div>
+          </div>
+        </article>
         <button onClick={this.props.ChangeRegisterCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./intro' className="btn btn-light m-3">Previous</Link>
           {nextButton}
         </div>
-      </div>
+      </main>
     );
   }
 }
