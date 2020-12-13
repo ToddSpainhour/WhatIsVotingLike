@@ -13,18 +13,20 @@ class OutsidePollingPlace extends React.Component {
       nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
     }
     return (
-      <div className="OutsidePollingPlace">
-        <h5>Outside Polling Place</h5>
-        <h6>Some slides will disable the next button until the user performs some action.</h6>
-        <p>Current disclaimerComplete status: {this.props.outsideComplete.toString()}</p>
+      <main className="OutsidePollingPlace">
+        <h5>{this.props.slides[3].slideTitle}</h5>
+          <article>
+          <h6>{this.props.slides[3].slideBodyText}</h6>
+          <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
+          </article>
 
-        <button onClick={this.props.ChangeOutsideCompletedStatus} >Click to fulfill slide requirements</button>
+          <button onClick={this.props.ChangeOutsideCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./register' className="btn btn-light m-3">Previous</Link>
           {nextButton}
         </div>
-      </div>
+      </main>
     );
   }
 }
