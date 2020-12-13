@@ -13,10 +13,15 @@ class VotingMachine extends React.Component {
       nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
     }
     return (
-      <div className="VotingMachine">
-        <h5>Voting Machine</h5>
-        <h6>Some slides will disable the next button until the user performs some action.</h6>
-        <p>Current VotingMachineComplete status: {this.props.votingMachineComplete.toString()}</p>
+      <main className="VotingMachine">
+        <h2>{this.props.slides[6].slideTitle}</h2>
+        <article>
+          <h6>{this.props.slides[6].slideBodyText}</h6>
+        </article>
+
+        <div>
+          <img src={this.props.slides[6].imageUrl} alt="Voting Machine"/>
+        </div>
 
         <button onClick={this.props.ChangeVotingMachineCompletedStatus} >Click to fulfill slide requirements</button>
 
@@ -24,7 +29,7 @@ class VotingMachine extends React.Component {
           <Link to='./checkIn' className="btn btn-light m-3">Previous</Link>
           {nextButton}
         </div>
-      </div>
+      </main>
     );
   }
 }

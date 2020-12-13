@@ -6,6 +6,11 @@
   background-color: $background;
   height: 100vh;
 
+  .register-button-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
   .module-navigation {
     background-color: $border;
     position: absolute;
