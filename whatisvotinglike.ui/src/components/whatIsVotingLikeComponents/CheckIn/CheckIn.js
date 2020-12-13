@@ -16,7 +16,7 @@ class CheckIn extends React.Component {
       <main className="CheckIn">
         <h2>{this.props.slides[5].slideTitle}</h2>
         <article>
-          <h5>{this.props.slides[4].slideBodyText}</h5>
+          <h5>{this.props.slides[5].slideBodyText}</h5>
           <div className="checkin-content-container">
 
             <div>
