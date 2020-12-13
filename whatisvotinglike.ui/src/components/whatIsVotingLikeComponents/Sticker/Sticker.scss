@@ -6,6 +6,9 @@
   background-color: $background;
   height: 100vh;
 
+  .sticker-img {
+    width:50%
+  }
   .module-navigation {
     background-color: $border;
     position: absolute;
