@@ -5,6 +5,15 @@
   color: $text;
   background-color: $background;
   height: 100vh;
+  
+  .checkin-content-container {
+    display: flex;
+    justify-content: space-around;
+
+    .photo-id-container {
+      align-self: center;
+    }
+  }
 
   .module-navigation {
     background-color: $border;
