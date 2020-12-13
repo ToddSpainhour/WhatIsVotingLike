@@ -4,6 +4,10 @@
   display: block;
   color: $text;
 
+  .intro-content-container {
+    display: flex;
+  }
+
   .module-navigation {
     background-color: $border;
     position: absolute;
