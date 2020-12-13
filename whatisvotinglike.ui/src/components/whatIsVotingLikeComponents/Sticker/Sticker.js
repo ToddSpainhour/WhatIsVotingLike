@@ -13,17 +13,19 @@ class Sticker extends React.Component {
       nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
     }
     return (
-      <div className="Sticker">
-        <h5>Sticker</h5>
-        <h6>Some slides will disable the next button until the user performs some action.</h6>
-        <p>Current StickerComplete status: {this.props.stickerComplete.toString()}</p>
+      <main className="Sticker">
+        <h2>{this.props.slides[7].slideTitle}</h2>
+        <article>
+        <h6>{this.props.slides[7].slideBodyText}</h6>
+        <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
+        </article>
 
         <button onClick={this.props.ChangeStickerCompletedStatus} >Click to fulfill slide requirements</button>
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./votingMachine' className="btn btn-light m-3">Previous</Link>
           {nextButton}
         </div>
-      </div>
+      </main>
     );
   }
 }
