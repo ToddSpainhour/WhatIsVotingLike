@@ -10,6 +10,7 @@ class Slider extends React.Component {
   changeSliderValue = (e) => {
     this.setState({ sliderValue: e.target.value });
   }
+  // grab sliderValue when submitAnswer is clicked, send it back up to Intro, conditionally render the response;
 
   render() {
     return (
@@ -21,7 +22,7 @@ class Slider extends React.Component {
           <output id="output"></output>
           <div className="slider-result">{this.state.sliderValue}%</div>
           </div>
-          <button className="btn btn-light">Submit Answer</button>
+          <button onClick={this.props.submitAnswer}className="btn btn-light">Submit Answer</button>
       </div>
     );
   }

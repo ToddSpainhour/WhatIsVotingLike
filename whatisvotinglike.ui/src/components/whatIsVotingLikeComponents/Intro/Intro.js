@@ -7,6 +7,17 @@ import Slider from '../../commonComponents/Slider/Slider';
 import './Intro.scss';
 
 class Intro extends React.Component {
+  state = {
+    // submittedSliderValue: 50,
+    sliderValue: 50,
+  }
+
+  submitAnswer = (sliderValue) => {
+    console.log('You clicked the submitAnswer func in Intro');
+    // this.setState({ submittedSliderValue: this.state.sliderValue });
+    console.log(sliderValue);
+  }
+
   render() {
     let nextButton;
     if (this.props.introComplete === true) {
@@ -21,7 +32,7 @@ class Intro extends React.Component {
         <div className="intro-content-container">
           <article>
             <h5>{this.props.slides[0].slideBodyText}</h5>
-            <Slider/>
+            <Slider submitAnswer={this.submitAnswer}/>
           <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
           </article>
 
