@@ -12,10 +12,15 @@ class Intro extends React.Component {
     sliderValue: 50,
   }
 
-  submitAnswer = (sliderValue) => {
+  changeSliderValue = (e) => {
+    this.setState({ sliderValue: e.target.value });
+  }
+
+  submitAnswer = () => {
     console.log('You clicked the submitAnswer func in Intro');
     // this.setState({ submittedSliderValue: this.state.sliderValue });
-    console.log(sliderValue);
+    this.setState({ sliderValue: this.state.sliderValue });
+    console.log(this.state.sliderValue); //
   }
 
   render() {
@@ -32,7 +37,8 @@ class Intro extends React.Component {
         <div className="intro-content-container">
           <article>
             <h5>{this.props.slides[0].slideBodyText}</h5>
-            <Slider submitAnswer={this.submitAnswer}/>
+            <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
+            {/* <Slider /> */}
           <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
           </article>
 
