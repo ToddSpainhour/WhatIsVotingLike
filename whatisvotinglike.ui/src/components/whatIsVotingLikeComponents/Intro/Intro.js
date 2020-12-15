@@ -9,6 +9,7 @@ import './Intro.scss';
 class Intro extends React.Component {
   state = {
     sliderValue: 50,
+    submittedAnswer: false,
   }
 
   changeSliderValue = (e) => {
@@ -18,6 +19,7 @@ class Intro extends React.Component {
   submitAnswer = () => {
     console.log('this.state.sliderValue: ', this.state.sliderValue);
     this.setState({ sliderValue: this.state.sliderValue });
+    this.setState({ submittedAnswer: true });
   }
 
   render() {
@@ -28,26 +30,37 @@ class Intro extends React.Component {
       nextButton = <button className="btn btn-warning m-3 disabled-next-button">Disabled Next</button>;
     }
 
+    // only show answerResponse if submitAnswer has been clicked
+    // bool in state add
+    let answerResponse;
+    if (this.state.submittedAnswer === true && this.state.sliderValue > 75) {
+      answerResponse = <h6>That's too high.</h6>;
+    } else if (this.state.submittedAnswer === true && this.state.sliderValue < 75) {
+      answerResponse = <h6>That's too low!</h6>;
+    } else {
+      answerResponse = '';
+    }
+
     return (
       <main className="Intro">
-        <h2>{this.props.slides[0].slideTitle}</h2>
-        <div className="intro-content-container">
-          <article>
-            <h5>{this.props.slides[0].slideBodyText}</h5>
-            <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
-          <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
-          </article>
+      <h2>{this.props.slides[0].slideTitle}</h2>
+      <div className="intro-content-container">
+        <article>
+          <h5>{this.props.slides[0].slideBodyText}</h5>
+          <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
+          { answerResponse }
+        <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
+        </article>
 
-          <img src={this.props.slides[0].imageUrl} alt="Voter holding a sign that says Vote."/>
-        </div>
+        <img src={this.props.slides[0].imageUrl} alt="Voter holding a sign that says Vote."/>
+      </div>
 
-        <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./disclaimer' className="btn btn-light m-3 previous-button">Previous</Link>
-          {nextButton}
-        </nav>
-      </main>
+      <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+        <Link to='./disclaimer' className="btn btn-light m-3 previous-button">Previous</Link>
+        {nextButton}
+      </nav>
+    </main>
     );
   }
 }
-
 export default Intro;
