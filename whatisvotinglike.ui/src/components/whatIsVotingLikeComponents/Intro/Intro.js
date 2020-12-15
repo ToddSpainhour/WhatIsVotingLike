@@ -17,9 +17,9 @@ class Intro extends React.Component {
   }
 
   submitAnswer = () => {
-    console.log('this.state.sliderValue: ', this.state.sliderValue);
     this.setState({ sliderValue: this.state.sliderValue });
     this.setState({ submittedAnswer: true });
+    this.props.ChangeIntroCompletedStatus();
   }
 
   render() {
@@ -30,8 +30,6 @@ class Intro extends React.Component {
       nextButton = <button className="btn btn-warning m-3 disabled-next-button">Disabled Next</button>;
     }
 
-    // only show answerResponse if submitAnswer has been clicked
-    // bool in state add
     let answerResponse;
     if (this.state.submittedAnswer === true && this.state.sliderValue > 75) {
       answerResponse = <h6>That's too high.</h6>;
@@ -49,7 +47,6 @@ class Intro extends React.Component {
           <h5>{this.props.slides[0].slideBodyText}</h5>
           <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
           { answerResponse }
-        <button onClick={this.props.ChangeIntroCompletedStatus} className='btn btn-light'>Let's Get Started</button>
         </article>
 
         <img src={this.props.slides[0].imageUrl} alt="Voter holding a sign that says Vote."/>
