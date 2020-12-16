@@ -6,6 +6,20 @@
   background-color: $background;
   height: 100vh;
 
+  .rollover-container {
+    display: flex;
+    background-color: $green;
+    color: $background;
+
+    .box-container {
+      background-color: $teal;
+    }
+
+    .rollover-message-container {
+      background-color: $orange;
+    }
+  }
+
   .register-button-container {
     display: flex;
     justify-content: space-around;
