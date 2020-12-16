@@ -92,7 +92,6 @@ class Register extends React.Component {
               </div>
             </div>
           </article>
-          {/* <button onClick={this.props.ChangeRegisterCompletedStatus} >Click to fulfill slide requirements</button> */}
 
           <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
             <Link to='./intro' className="btn btn-light m-3">Previous</Link>
