@@ -22,3 +22,23 @@
     width: 100%;
   }
 }
+
+.draggable {
+  background-color: $border;
+}
+
+.droppable {
+  background-color: $border;
+  width: 150px;
+  height: 100px;
+}
+
+.photo-id-types {
+  background-color: $border;
+  border: 5px solid $green;
+  border-radius: 25px;
+}
+
+.drag-and-drop-container {
+  display: flex;
+}
