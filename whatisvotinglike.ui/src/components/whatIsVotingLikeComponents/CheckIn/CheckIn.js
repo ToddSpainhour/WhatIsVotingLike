@@ -15,12 +15,13 @@ class CheckIn extends React.Component {
       { type: 'College student ID with your photo', accepted: false },
       { type: 'Tennessee handgun carry permit with your photo', accepted: true },
     ],
+    answerPicked: false,
   }
 
-  onDragOver = (e) => {
-    console.log('onDragOver');
-    e.preventDefualt();
-  }
+  // onDragOver = (e) => {
+  //   console.log('onDragOver');
+  //   e.preventDefualt();
+  // }
 
   onDragStart = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -28,9 +29,11 @@ class CheckIn extends React.Component {
   }
 
   onDrop = (e) => {
+    console.log('inside onDrop');
     e.preventDefault();
     const data = e.dataTransfer.getData('text');
     e.target.appendChild(document.getElementById(data));
+    this.setState({ answerPicked: true });
   }
 
   render() {
@@ -62,7 +65,8 @@ class CheckIn extends React.Component {
         <button onClick={this.props.ChangeCheckInCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="drag-and-drop-container">
-        <div className="droppable col-6" onDragOver={(e) => this.onDragOver(e)} onDrop={(e) => this.onDrop}>Drop stuff here</div>
+        <div className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop stuff here</div>
+        {/* <div className="droppable col-6" onDragOver={(e) => e.onDragOver(e)} onDrop={(e) => this.onDrop}>Drop stuff here</div> */}
         <div draggable className="draggable col-6">{idToShow}</div>
         {/* <div draggable className="draggable col-6" onDragStart={(e) => this.onDragStart(e)}>{idToShow}</div> */}
         </div>
