@@ -15,31 +15,19 @@ class CheckIn extends React.Component {
       { type: 'College student ID with your photo', accepted: false },
       { type: 'Tennessee handgun carry permit with your photo', accepted: true },
     ],
-    answerPicked: false,
-    answerCorrect: false,
+    selectedAnswerId: '',
   }
 
   onDragStart = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
-    console.log('onDragStart e.target.id: ', e.target.id);
   }
 
   onDrop = (e) => {
-    console.log('inside onDrop');
     e.preventDefault();
     const data = e.dataTransfer.getData('text');
     e.target.appendChild(document.getElementById(data));
-    this.setState({ answerPicked: true });
-    this.checkAnswer(data);
-  }
-
-  checkAnswer = (data) => {
-    if (data === 'collegestudentidwithyourphoto') {
-      console.log('correct...id is:', data);
-      this.setState({ answerCorrect: true });
-    } else {
-      console.log('wrong... id is:', data);
-    }
+    this.setState({ selectedAnswerId: data });
+    this.props.ChangeCheckInCompletedStatus();
   }
 
   render() {
@@ -47,10 +35,17 @@ class CheckIn extends React.Component {
           draggable="true"
           key={typeOfPhotoId.type}
           className="photo-id-types draggable"
-          // id={typeOfPhotoId.type}
           id={typeOfPhotoId.type.split(' ').join('').toLocaleLowerCase()}
           onDragStart={(e) => this.onDragStart(e, typeOfPhotoId.id)}> {typeOfPhotoId.type}</p>);
 
+    let AnswerResponse;
+    if (this.state.selectedAnswerId !== '' && this.state.selectedAnswerId === 'collegestudentidwithyourphoto') {
+      AnswerResponse = <h6>That's Correct. College student Id's can not be used as a photo id when voting in Tennessee.</h6>;
+    } else if (this.state.selectedAnswerId === '') {
+      AnswerResponse = '';
+    } else {
+      AnswerResponse = <h6>That's incorrect. The only id mentioned that you couldn't use when going to is a college student id</h6>;
+    }
     let nextButton;
     if (this.props.checkInComplete === true) {
       nextButton = <Link to='./votingMachine' className="btn btn-light m-3 next-button">Active Next</Link>;
@@ -71,10 +66,9 @@ class CheckIn extends React.Component {
         <button onClick={this.props.ChangeCheckInCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="drag-and-drop-container">
-        <div className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop stuff here</div>
-        {/* <div className="droppable col-6" onDragOver={(e) => e.onDragOver(e)} onDrop={(e) => this.onDrop}>Drop stuff here</div> */}
+        <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop stuff here</div>
+        <div>{AnswerResponse}</div>
         <div draggable className="draggable col-6">{idToShow}</div>
-        {/* <div draggable className="draggable col-6" onDragStart={(e) => this.onDragStart(e)}>{idToShow}</div> */}
         </div>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
