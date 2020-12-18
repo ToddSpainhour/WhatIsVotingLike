@@ -16,12 +16,8 @@ class CheckIn extends React.Component {
       { type: 'Tennessee handgun carry permit with your photo', accepted: true },
     ],
     answerPicked: false,
+    answerCorrect: false,
   }
-
-  // onDragOver = (e) => {
-  //   console.log('onDragOver');
-  //   e.preventDefualt();
-  // }
 
   onDragStart = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -34,6 +30,16 @@ class CheckIn extends React.Component {
     const data = e.dataTransfer.getData('text');
     e.target.appendChild(document.getElementById(data));
     this.setState({ answerPicked: true });
+    this.checkAnswer(data);
+  }
+
+  checkAnswer = (data) => {
+    if (data === 'collegestudentidwithyourphoto') {
+      console.log('correct...id is:', data);
+      this.setState({ answerCorrect: true });
+    } else {
+      console.log('wrong... id is:', data);
+    }
   }
 
   render() {
