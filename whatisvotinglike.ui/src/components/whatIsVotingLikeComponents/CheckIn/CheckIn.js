@@ -12,41 +12,35 @@ class CheckIn extends React.Component {
       { type: 'Photo ID issued by the Tennessee Department of Safety and Homeland Security', accepted: true },
       { type: 'Photo ID issued by the federal or Tennessee state government', accepted: true },
       { type: 'United States Military photo ID', accepted: true },
-      { type: 'College student ID', accepted: false },
+      { type: 'College student ID with your photo', accepted: false },
       { type: 'Tennessee handgun carry permit with your photo', accepted: true },
     ],
   }
 
   onDragOver = (e) => {
+    console.log('onDragOver');
     e.preventDefualt();
   }
 
-  onDragStart = (e, monkeyButt) => {
-    e.preventDefault();
-    // const type = this.state.photoIdOptions.type;
-    e.dataTransfer.setData('text/plain', monkeyButt);
-    console.log('onDragStart', monkeyButt);
-    console.log('type', monkeyButt);
-    console.log('e.dataTransfer.setData', e.dataTransfer.setData);
+  onDragStart = (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    console.log('onDragStart e.target.id: ', e.target.id);
   }
 
-  // handleDragStart(e, order) {
-  //   e.dataTransfer.setData('text/plain', order);
-  // }
-
   onDrop = (e) => {
-
+    e.preventDefault();
+    const data = e.dataTransfer.getData('text');
+    e.target.appendChild(document.getElementById(data));
   }
 
   render() {
-    // eslint-disable-next-line max-len
     const idToShow = this.state.photoIdOptions.map((typeOfPhotoId) => <p
+          draggable="true"
           key={typeOfPhotoId.type}
           className="photo-id-types draggable"
-          id={typeOfPhotoId.type}
+          // id={typeOfPhotoId.type}
+          id={typeOfPhotoId.type.split(' ').join('').toLocaleLowerCase()}
           onDragStart={(e) => this.onDragStart(e, typeOfPhotoId.id)}> {typeOfPhotoId.type}</p>);
-
-    // const idToShow = this.state.photoIdOptions.map((typeOfPhotoId) => <div key={typeOfPhotoId.type} className="photo-id-types draggable" onDragStart={(e) => this.onDragStart(e, typeOfPhotoId.type)}> <p>{typeOfPhotoId.type}</p></div>);
 
     let nextButton;
     if (this.props.checkInComplete === true) {
@@ -60,38 +54,17 @@ class CheckIn extends React.Component {
         <article>
           <h5>{this.props.slides[5].slideBodyText}</h5>
           <div className="checkin-content-container">
-
             <div>
               <img src={this.props.slides[4].imageUrl} alt="Poll Worker Checking ID"/>
             </div>
-            {/* <div className="photo-id-container">
-              <h3>What IDs are acceptable?</h3>
-              <h6>Tennessee driver license with your photo</h6>
-              <h6>United States Passport</h6>
-              <h6>Photo ID issued by the Tennessee Department of Safety and Homeland Security</h6>
-              <h6>Photo ID issued by the federal or Tennessee state government</h6>
-              <h6>United States Military photo ID</h6>
-              <h6>Tennessee handgun carry permit with your photo</h6>
-              <h3>What IDs are not acceptable?</h3>
-              <h6>College student IDs and photo IDs not issued by the federal or Tennessee state government are NOT acceptable.</h6>
-              <h6> This includes county or city issued photo IDs, such as library cards, and photo IDs issued by other states.</h6>
-            </div> */}
           </div>
         </article>
         <button onClick={this.props.ChangeCheckInCompletedStatus} >Click to fulfill slide requirements</button>
-        {/* <div className="drag-and-drop-container">
-          <h5>Let's try some drag and drop down here</h5>
-          <div className="drop-area">
-            <h6>Drop Area</h6>
-          </div>
-          <div>
-          {idToShow}
-          </div>
-        </div> */}
 
         <div className="drag-and-drop-container">
         <div className="droppable col-6" onDragOver={(e) => this.onDragOver(e)} onDrop={(e) => this.onDrop}>Drop stuff here</div>
-        <div draggable className="draggable col-6" onDragStart={(e) => this.onDragStart(e)}>{idToShow}</div>
+        <div draggable className="draggable col-6">{idToShow}</div>
+        {/* <div draggable className="draggable col-6" onDragStart={(e) => this.onDragStart(e)}>{idToShow}</div> */}
         </div>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
