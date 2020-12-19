@@ -6,9 +6,17 @@
   background-color: $background;
   height: 100vh;
 
-  // .inside-content-container {
+  h2 {
+    padding: $header-padding;
+    font-weight: $header-weight;
+    font-size: $header-size;
+    color: $teal;
+  }
 
-  // }
+  h5 {
+    font-size: $body-text-size;
+    padding: $body-text-padding;
+  }
 
   .module-navigation {
     background-color: $border;
