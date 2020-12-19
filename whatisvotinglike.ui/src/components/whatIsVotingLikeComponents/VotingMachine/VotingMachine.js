@@ -16,7 +16,7 @@ class VotingMachine extends React.Component {
       <main className="VotingMachine">
         <h2>{this.props.slides[6].slideTitle}</h2>
         <article>
-          <h6>{this.props.slides[6].slideBodyText}</h6>
+          <h5>{this.props.slides[6].slideBodyText}</h5>
         </article>
 
         <div>

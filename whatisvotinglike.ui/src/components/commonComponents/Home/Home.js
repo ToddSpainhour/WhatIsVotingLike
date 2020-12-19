@@ -12,7 +12,7 @@ class Home extends React.Component {
 
     return (
       <div className="Home">
-        <h5>Home</h5>
+        <h2>What is Voting Like?</h2>
         <div className="module-cards-container">
         {buildModuleCards}
         </div>

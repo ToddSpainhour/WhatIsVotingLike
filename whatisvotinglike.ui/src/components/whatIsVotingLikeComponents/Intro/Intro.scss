@@ -4,6 +4,23 @@
   display: block;
   color: $text;
 
+  h2 {
+    padding: $header-padding;
+    font-weight: $header-weight;
+    font-size: $header-size;
+    color: $teal;
+  }
+
+  h3 {
+    color: $teal;
+    padding: $body-text-padding;
+  }
+
+  h5 {
+    font-size: $body-text-size;
+    padding: $body-text-padding;
+  }
+
   .intro-content-container {
     display: flex;
   }

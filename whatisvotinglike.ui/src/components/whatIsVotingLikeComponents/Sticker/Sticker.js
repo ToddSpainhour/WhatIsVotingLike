@@ -16,7 +16,7 @@ class Sticker extends React.Component {
       <main className="Sticker">
         <h2>{this.props.slides[7].slideTitle}</h2>
         <article>
-        <h6>{this.props.slides[7].slideBodyText}</h6>
+        <h5>{this.props.slides[7].slideBodyText}</h5>
         <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
         </article>
 
