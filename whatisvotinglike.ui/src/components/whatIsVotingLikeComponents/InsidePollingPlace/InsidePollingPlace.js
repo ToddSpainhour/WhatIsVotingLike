@@ -18,7 +18,7 @@ class InsidePollingPlace extends React.Component {
         <h5>{this.props.slides[4].slideBodyText}</h5>
         <button onClick={this.props.ChangeInsideCompletedStatus} >Click to fulfill slide requirements</button>
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./outside' className="btn m-3 previous-button">Previous</Link>
+          <Link to='./outsidePollingPlace' className="btn m-3 previous-button">Previous</Link>
           {nextButton}
         </div>
       </main>
