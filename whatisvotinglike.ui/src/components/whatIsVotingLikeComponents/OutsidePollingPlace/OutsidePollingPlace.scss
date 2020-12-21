@@ -2,6 +2,7 @@
 
 .OutsidePollingPlace {
   display: block;
+  font-family: $font-stack;
   color: $text;
   background-color: $background;
   height: 100vh;
@@ -23,6 +24,43 @@
     position: absolute;
     bottom: 2rem;
     width: 100%;
+    padding-right: 2rem;
+
+    .active-next-button {
+      background-color: $active-nav-button-background-color;
+      color: $active-nav-button-text-color;
+      font-weight: $nav-btn-font-weight;
+      width: $nav-button-width;
+    }
+
+    .active-next-button:hover {
+      background-color: $hover-active-nav-button-background-color;
+      color: $hover-active-nav-button-text-color;
+      font-weight: $nav-btn-font-weight;
+      width: $nav-button-width;
+    }
+
+    .disabled-next-button {
+      background-color: $disabled-nav-button-background-color;
+      color: $disabled-nav-button-text-color;
+      font-weight: $nav-btn-font-weight;
+      width: $nav-button-width;
+      cursor: $disabled-cursor;
+    }
+
+    .previous-button {
+      background-color: $active-nav-button-background-color;
+      color: $active-nav-button-text-color;
+      font-weight: $nav-btn-font-weight;
+      width: $nav-button-width;
+    }
+
+    .previous-button:hover {
+      background-color: $hover-active-nav-button-background-color;
+      color:$hover-active-nav-button-text-color;
+      font-weight: $nav-btn-font-weight;
+      width: $nav-button-width;
+    }
   }
 
   .outside-image {

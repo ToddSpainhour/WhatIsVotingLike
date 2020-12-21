@@ -8,9 +8,9 @@ class OutsidePollingPlace extends React.Component {
   render() {
     let nextButton;
     if (this.props.outsideComplete === true) {
-      nextButton = <Link to='./insidePollingPlace' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./insidePollingPlace' className="btn m-3 active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
     }
     return (
       <main className="OutsidePollingPlace">
@@ -23,7 +23,7 @@ class OutsidePollingPlace extends React.Component {
           <button onClick={this.props.ChangeOutsideCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./register' className="btn btn-light m-3">Previous</Link>
+          <Link to='./register' className="btn m-3 previous-button">Previous</Link>
           {nextButton}
         </div>
       </main>
