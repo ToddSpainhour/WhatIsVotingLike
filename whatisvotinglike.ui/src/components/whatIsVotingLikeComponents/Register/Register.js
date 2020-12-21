@@ -45,9 +45,9 @@ class Register extends React.Component {
 
       let nextButton;
       if (this.props.registerComplete === true) {
-        nextButton = <Link to='./outsidePollingPlace' className="btn btn-light m-3 next-button">Active Next</Link>;
+        nextButton = <Link to='./outsidePollingPlace' className="btn m-3 active-next-button">Next</Link>;
       } else {
-        nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+        nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
       }
 
       return (
@@ -94,7 +94,7 @@ class Register extends React.Component {
           </article>
 
           <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./intro' className="btn btn-light m-3">Previous</Link>
+            <Link to='./intro' className="btn m-3 previous-button">Previous</Link>
             {nextButton}
           </div>
         </main>

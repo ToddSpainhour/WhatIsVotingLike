@@ -59,9 +59,9 @@ class CheckIn extends React.Component {
 
     let nextButton;
     if (this.props.checkInComplete === true) {
-      nextButton = <Link to='./votingMachine' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./votingMachine' className="btn m-3 active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
     }
 
     return (
@@ -83,7 +83,7 @@ class CheckIn extends React.Component {
         <div>{AnswerResponse}</div>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./insidePollingPlace' className="btn btn-light m-3">Previous</Link>
+          <Link to='./insidePollingPlace' className="btn previous-button m-3">Previous</Link>
           {nextButton}
         </div>
       </main>

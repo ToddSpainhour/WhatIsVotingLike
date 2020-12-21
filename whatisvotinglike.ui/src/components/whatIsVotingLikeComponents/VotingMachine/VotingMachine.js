@@ -8,9 +8,9 @@ class VotingMachine extends React.Component {
   render() {
     let nextButton;
     if (this.props.votingMachineComplete === true) {
-      nextButton = <Link to='./sticker' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./sticker' className="btn  m-3 active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+      nextButton = <button className="btn  m-3 disabled-next-button">Next</button>;
     }
     return (
       <main className="VotingMachine">
@@ -26,7 +26,7 @@ class VotingMachine extends React.Component {
         <button onClick={this.props.ChangeVotingMachineCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./checkIn' className="btn btn-light m-3">Previous</Link>
+          <Link to='./checkIn' className="btn  m-3 previous-button">Previous</Link>
           {nextButton}
         </div>
       </main>

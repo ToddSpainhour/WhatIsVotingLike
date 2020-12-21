@@ -10,9 +10,9 @@ class Disclaimer extends React.Component {
 
     let nextButton;
     if (this.props.disclaimerComplete === true) {
-      nextButton = <Link to='./intro' className="btn btn-light m-3 next-button">Active Next</Link>;
+      nextButton = <Link to='./intro' className="btn active-next-button m-3">Next</Link>;
     } else {
-      nextButton = <button className="btn btn-light m-3 disabled-next-button">Disabled Next</button>;
+      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
     }
     return (
       <main className="Disclaimer">
@@ -27,7 +27,7 @@ class Disclaimer extends React.Component {
         <img src={this.props.slides[1].imageUrl} className="disclaimer-image" alt="Polling Location"/>
 
         <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./home' className="btn btn-light m-3">Previous</Link>
+          <Link to='./home' className="btn m-3 previous-button">Previous</Link>
           {nextButton}
         </nav>
       </main>
