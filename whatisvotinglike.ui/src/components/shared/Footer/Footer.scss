@@ -2,8 +2,19 @@
 
 .Footer {
   display: block;
-  background-color: $dark-purple;
+  font-family: $font-stack;
+  background-color: $teal;
   position: absolute;
   bottom: 0;
   width: 100%;
+
+  p {
+    color: $background;
+    margin-top: 16px;
+    font-weight: 200;
+  }
+
+  a {
+    color: $background;
+  }
 }
