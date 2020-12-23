@@ -13,6 +13,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h2>What is Voting Like?</h2>
+        <h5>Welcome to the unauthorized "What is Voting Like?" web training experience, where you can see just how easy voting in Tennessee can be.
+        </h5>
+          <h5>Choose a module below to get started.</h5>
         <div className="module-cards-container">
         {buildModuleCards}
         </div>
