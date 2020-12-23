@@ -19,23 +19,36 @@
     padding: $body-text-padding;
   }
 
-  .rollover-container {
+  // .rollover-container {
+  //   display: flex;
+  //   background-color: $green;
+  //   color: $background;
+  // }
+
+  .box-container {
+    // background-color: $text;
     display: flex;
-    background-color: $green;
-    color: $background;
-
-    .box-container {
-      background-color: $teal;
-    }
-
-    .rollover-message-container {
-      background-color: $orange;
-    }
+    justify-content: center;
   }
 
-  .register-button-container {
-    display: flex;
-    justify-content: space-around;
+  .reveal-btn {
+    margin: 1rem;
+  }
+
+  .slide-instructions {
+    color: $text;
+    padding-top: 2rem;
+  }
+
+  .rollover-message-container {
+    background-color: $border;
+    justify-content: center;
+
+    .revealed-text {
+      color: $text;
+      margin: 2rem;
+      padding: 1% 10% 1% 10%;
+    }
   }
 
   .module-navigation {
