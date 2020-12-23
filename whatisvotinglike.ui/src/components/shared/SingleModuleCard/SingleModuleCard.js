@@ -12,8 +12,8 @@ class SingleModuleCard extends React.Component {
     };
 
     return (
-      <div className="SingleModuleCard col-md-5 col-sm-12">
-        <h5>Module Title: {this.props.module.title}</h5>
+      <div className="SingleModuleCard col-md-3 col-sm-12">
+        <h5 className="module-title">{this.props.module.title}</h5>
         <p>{this.props.module.description}</p>
         <Link to='./disclaimer' onClick={loadSelectedModule} className="btn btn-small start-training-btn">Start Training</Link>
       </div>

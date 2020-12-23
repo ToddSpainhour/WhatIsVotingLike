@@ -1,17 +1,23 @@
 @import '../../../styles/variables';
 
 .SingleModuleCard {
-  color: $text;
-  background-color: $border;
+  color: $border;
+  background-color: $text;
   margin: 2rem 0 2rem 0;
   border-radius: 10px;
 
   .start-training-btn {
-    background-color: $green;
+    background-color: $teal;
+    margin-bottom: 1rem;
     &:hover {
-      color: $text;
-      background-color: $dark-purple;
+      color: $teal;
+      background-color: $border;
     }
+  }
+
+  .module-title {
+    font-weight: 600;
+    padding-top: 1rem;
   }
 }
 
