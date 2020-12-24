@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './InsidePollingPlace.scss';
 
 class InsidePollingPlace extends React.Component {
+  componentDidMount() {
+    setTimeout(this.props.ChangeInsideCompletedStatus, 5000);
+  }
+
   render() {
     let nextButton;
     if (this.props.insideComplete === true) {
@@ -16,7 +20,6 @@ class InsidePollingPlace extends React.Component {
       <main className="InsidePollingPlace">
         <h2>{this.props.slides[4].slideTitle}</h2>
         <h5>{this.props.slides[4].slideBodyText}</h5>
-        <button onClick={this.props.ChangeInsideCompletedStatus} >Click to fulfill slide requirements</button>
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./outsidePollingPlace' className="btn m-3 previous-button">Previous</Link>
           {nextButton}

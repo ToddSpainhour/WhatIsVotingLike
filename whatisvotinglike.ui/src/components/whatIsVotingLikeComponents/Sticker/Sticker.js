@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './Sticker.scss';
 
 class Sticker extends React.Component {
+  componentDidMount() {
+    setTimeout(this.props.ChangeStickerCompletedStatus, 5000);
+  }
+
   render() {
     let nextButton;
     if (this.props.stickerComplete === true) {
@@ -16,11 +20,10 @@ class Sticker extends React.Component {
       <main className="Sticker">
         <h2>{this.props.slides[7].slideTitle}</h2>
         <article>
-        <h5>{this.props.slides[7].slideBodyText}</h5>
-        <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
+          <h5>{this.props.slides[7].slideBodyText}</h5>
+          <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
         </article>
 
-        <button onClick={this.props.ChangeStickerCompletedStatus} >Click to fulfill slide requirements</button>
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./votingMachine' className="btn m-3 previous-button">Previous</Link>
           {nextButton}

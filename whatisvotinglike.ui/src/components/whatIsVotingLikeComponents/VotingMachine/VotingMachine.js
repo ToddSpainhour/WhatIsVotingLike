@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './VotingMachine.scss';
 
 class VotingMachine extends React.Component {
+  componentDidMount() {
+    setTimeout(this.props.ChangeVotingMachineCompletedStatus, 5000);
+  }
+
   render() {
     let nextButton;
     if (this.props.votingMachineComplete === true) {
@@ -22,8 +26,6 @@ class VotingMachine extends React.Component {
         <div>
           <img src={this.props.slides[6].imageUrl} alt="Voting Machine"/>
         </div>
-
-        <button onClick={this.props.ChangeVotingMachineCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./checkIn' className="btn  m-3 previous-button">Previous</Link>
