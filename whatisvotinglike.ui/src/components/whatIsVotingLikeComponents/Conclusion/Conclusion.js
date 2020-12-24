@@ -9,7 +9,7 @@ class Conclusion extends React.Component {
     return (
       <div className="Conclusion">
         <h5>Conclusion</h5>
-        <Link to='./home' className="btn btn-small complete-training-button">Complete Training</Link>
+        <Link to='./home' className="btn btn-small complete-training-button">Back to Home</Link>
 
         <div className="register-button-container">
               <div>
@@ -18,7 +18,11 @@ class Conclusion extends React.Component {
               </div>
               <div>
                 <h6>Already registered? Confirm your registration by clicking the link below.</h6>
-                <a className="btn btn-light" href="https://tnmap.tn.gov/voterlookup/" target="_blank" rel="noreferrer nofollow">Confirm Your Registration in Tennessee.</a>
+                <a className="btn btn-light" href="https://tnmap.tn.gov/voterlookup/" target="_blank" rel="noreferrer nofollow">Confirm Your Registration in Tennessee</a>
+              </div>
+              <div>
+                <h6>Learn everything you need to know about elections in Tennessee by visiting GoVoteTN.com</h6>
+                <a className="btn btn-light" href="https://govotetn.com/" target="_blank" rel="noreferrer nofollow">Visit GoVoteTN.com</a>
               </div>
             </div>
 
