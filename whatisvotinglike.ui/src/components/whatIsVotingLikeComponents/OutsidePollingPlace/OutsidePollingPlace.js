@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import './OutsidePollingPlace.scss';
 
 class OutsidePollingPlace extends React.Component {
+  componentDidMount() {
+    setTimeout(this.props.ChangeOutsideCompletedStatus, 5000);
+  }
+
   render() {
     let nextButton;
     if (this.props.outsideComplete === true) {
@@ -16,11 +20,9 @@ class OutsidePollingPlace extends React.Component {
       <main className="OutsidePollingPlace">
         <h2>{this.props.slides[3].slideTitle}</h2>
           <article>
-          <h5>{this.props.slides[3].slideBodyText}</h5>
-          <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
+            <h5>{this.props.slides[3].slideBodyText}</h5>
+            <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
           </article>
-
-          <button onClick={this.props.ChangeOutsideCompletedStatus} >Click to fulfill slide requirements</button>
 
         <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
           <Link to='./register' className="btn m-3 previous-button">Previous</Link>
