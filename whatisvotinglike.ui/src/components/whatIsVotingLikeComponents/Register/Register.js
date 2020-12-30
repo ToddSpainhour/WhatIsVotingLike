@@ -83,7 +83,7 @@ class Register extends React.Component {
 
           </article>
 
-          <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
+          <div className="navbar fixed-bottom module-navigation d-flex justify-content-sm-end justify-content-center">
             <Link to='./intro' className="btn m-3 previous-button">Previous</Link>
             {nextButton}
           </div>

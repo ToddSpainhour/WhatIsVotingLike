@@ -30,10 +30,11 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
-    width: 100%;
-    padding-right: 2rem;
+    position: static;
+    // position: absolute;
+    // bottom: 3.5rem;
+    // width: 100%;
+    // padding-right: 2rem;
 
     .active-next-button {
       background-color: $active-nav-button-background-color;

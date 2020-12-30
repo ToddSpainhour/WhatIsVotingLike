@@ -29,10 +29,14 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
+    position: static;
+    // position: absolute;
+    // position: -webkit-sticky; /* Safari */
+    // position: sticky;
+    // bottom: 0;
+    // // bottom: 3.5rem;
     width: 100%;
-    padding-right: 2rem;
+    // padding-right: 2rem;
 
     .active-next-button {
       background-color: $active-nav-button-background-color;
