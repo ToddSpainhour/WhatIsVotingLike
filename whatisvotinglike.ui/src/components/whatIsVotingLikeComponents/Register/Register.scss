@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
 .Register {
-  display: block;
-  font-family: $font-stack;
-  background-color: $background;
-  color: $text;
-  height: 100vh;
+  @include component;
+
+  .register-container {
+    @include component-container;
+  }
 
   h2 {
     padding: $header-padding;
@@ -19,14 +19,7 @@
     padding: $body-text-padding;
   }
 
-  // .rollover-container {
-  //   display: flex;
-  //   background-color: $green;
-  //   color: $background;
-  // }
-
   .box-container {
-    // background-color: $text;
     display: flex;
     justify-content: center;
   }
@@ -54,10 +47,6 @@
   .module-navigation {
     background-color: $border;
     position: static;
-    // position: absolute;
-    // bottom: 3.5rem;
-    // width: 100%;
-    // padding-right: 2rem;
 
     .active-next-button {
       background-color: $active-nav-button-background-color;
