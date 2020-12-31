@@ -66,25 +66,26 @@ class CheckIn extends React.Component {
 
     return (
       <main className="CheckIn">
-        <h2>{this.props.slides[5].slideTitle}</h2>
-        <article>
-          <h5>{this.props.slides[5].slideBodyText}</h5>
-          <div className="checkin-content-container">
-            <h5>Out of the options below, which is NOT a valid photo ID when voting in Tennessee? Drag and drop your answer.</h5>
-            <div>
+        <div className="checkin-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./insidePollingPlace' className="btn previous-button m-3">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[5].slideTitle}</h2>
+          <article>
+            <h5>{this.props.slides[5].slideBodyText}</h5>
+            <div className="checkin-content-container">
+              <h5>Out of the options below, which is NOT a valid photo ID when voting in Tennessee? Drag and drop your answer.</h5>
+              <div>
+              </div>
             </div>
+          </article>
+
+          <div className="drag-and-drop-container">
+            <div draggable className="draggable col-6">{idToShow}</div>
+            <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop and drop your answer here.</div>
           </div>
-        </article>
-
-        <div className="drag-and-drop-container">
-          <div draggable className="draggable col-6">{idToShow}</div>
-          <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop and drop your answer here.</div>
-        </div>
-        <div>{AnswerResponse}</div>
-
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./insidePollingPlace' className="btn previous-button m-3">Previous</Link>
-          {nextButton}
+          <div>{AnswerResponse}</div>
         </div>
       </main>
     );
