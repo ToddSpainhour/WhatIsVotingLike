@@ -1,20 +1,19 @@
 $color1: darkgrey; 
-
 $background: #02203a;
 $border: #17314a;
 $text: #a7b8c8;
-
 $purple: #5f63eb;
 $dark-purple: #573e5c;
 $green: #81b37e;
 $teal: #4da599;
 $orange: #b38b43;
-
 $answer-green: #038626;
 $answer-red: #b14a4e;
 $button-blue: #174dc9;
 
+
 $font-stack: "Helvetica", sans-serif;
+
 
 $header-size: 4rem;
 $header-weight: bolder;
@@ -23,13 +22,16 @@ $header-padding: 25px 0 50px 0;
 $body-text-padding: 0 3% 1% 3%; 
 $body-text-size: 1.5rem;
 
+
 // navigation
 $nav-button-width: 5%;
 $nav-btn-font-weight: bold;
 
+
 // active nav buttons
 $active-nav-button-background-color: $teal;
 $active-nav-button-text-color: #fffafa;
+
 
 // hovered nav buttons
 $hover-active-nav-button-background-color: #fffafa;
@@ -40,3 +42,24 @@ $hover-active-nav-button-text-color: $teal;
 $disabled-nav-button-background-color: $background;
 $disabled-nav-button-text-color: #585858;
 $disabled-cursor: no-drop;
+
+
+//mixins
+@mixin component {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  font-family: $font-stack;
+  color: $text;
+  background-color: $border;
+  background-color: lightslategrey;
+}
+
+@mixin component-container {
+  background-color: $background;
+  margin: auto auto;
+  min-height: 720px;
+  max-height: 720px;
+  min-width: 1200px;
+  max-width: 1200px;
+}
