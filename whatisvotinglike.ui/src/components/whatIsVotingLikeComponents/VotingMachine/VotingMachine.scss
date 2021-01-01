@@ -6,11 +6,6 @@
   .voting-machine-container {
     @include component-container;
   }
-  // display: block;
-  // font-family: $font-stack;
-  // background-color: $background;
-  // color: $text;
-  // height: 100vh;
 
   h2 {
     padding: $header-padding;
