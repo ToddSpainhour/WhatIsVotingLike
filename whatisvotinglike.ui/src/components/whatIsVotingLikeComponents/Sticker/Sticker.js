@@ -12,15 +12,15 @@ class Sticker extends React.Component {
   render() {
     let nextButton;
     if (this.props.stickerComplete === true) {
-      nextButton = <Link to='./conclusion' className="btn m-3 active-next-button">Next</Link>;
+      nextButton = <Link to='./conclusion' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
     return (
       <main className="Sticker">
         <div className="sticker-container">
           <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./votingMachine' className="btn m-3 previous-button">Previous</Link>
+            <Link to='./votingMachine' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[7].slideTitle}</h2>
