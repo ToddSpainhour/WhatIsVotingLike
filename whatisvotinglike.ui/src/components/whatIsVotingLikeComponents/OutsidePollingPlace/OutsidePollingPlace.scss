@@ -2,11 +2,6 @@
 
 .OutsidePollingPlace {
   @include component;
-  // display: block;
-  // font-family: $font-stack;
-  // color: $text;
-  // background-color: $background;
-  // height: 100vh;
 
   .outside-container {
     @include component-container;
