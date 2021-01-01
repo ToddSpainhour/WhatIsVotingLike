@@ -45,16 +45,16 @@ class Register extends React.Component {
 
       let nextButton;
       if (this.props.registerComplete === true) {
-        nextButton = <Link to='./outsidePollingPlace' className="btn m-3 active-next-button">Next</Link>;
+        nextButton = <Link to='./outsidePollingPlace' className="btn active-next-button">Next</Link>;
       } else {
-        nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+        nextButton = <button className="btn disabled-next-button">Next</button>;
       }
 
       return (
         <main className="Register">
           <div className="register-container">
-            <nav className="navbar fixed-bottom module-navigation d-flex justify-content-sm-end justify-content-center">
-              <Link to='./intro' className="btn m-3 previous-button">Previous</Link>
+            <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+              <Link to='./intro' className="btn previous-button">Previous</Link>
               {nextButton}
             </nav>
             <h2>{this.props.slides[2].slideTitle}</h2>
