@@ -25,9 +25,9 @@ class Intro extends React.Component {
   render() {
     let nextButton;
     if (this.props.introComplete === true) {
-      nextButton = <Link to='./register' className="btn active-next-button m-3">Next</Link>;
+      nextButton = <Link to='./register' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
 
     let answerResponse;
@@ -42,8 +42,8 @@ class Intro extends React.Component {
     return (
       <main className="Intro">
         <div className="intro-container">
-          <nav className="navbar fixed-bottom module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./disclaimer' className="btn m-3 previous-button">Previous</Link>
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./disclaimer' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[0].slideTitle}</h2>

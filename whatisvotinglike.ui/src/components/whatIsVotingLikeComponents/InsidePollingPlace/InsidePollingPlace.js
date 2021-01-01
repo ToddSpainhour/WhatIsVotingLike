@@ -12,15 +12,15 @@ class InsidePollingPlace extends React.Component {
   render() {
     let nextButton;
     if (this.props.insideComplete === true) {
-      nextButton = <Link to='./checkIn' className="btn m-3 active-next-button">Next</Link>;
+      nextButton = <Link to='./checkIn' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
     return (
       <main className="InsidePollingPlace">
         <div className="inside-container">
           <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./outsidePollingPlace' className="btn m-3 previous-button">Previous</Link>
+            <Link to='./outsidePollingPlace' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[4].slideTitle}</h2>

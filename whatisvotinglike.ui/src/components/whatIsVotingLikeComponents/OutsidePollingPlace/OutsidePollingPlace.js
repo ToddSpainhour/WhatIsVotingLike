@@ -12,15 +12,15 @@ class OutsidePollingPlace extends React.Component {
   render() {
     let nextButton;
     if (this.props.outsideComplete === true) {
-      nextButton = <Link to='./insidePollingPlace' className="btn m-3 active-next-button">Next</Link>;
+      nextButton = <Link to='./insidePollingPlace' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
     return (
       <main className="OutsidePollingPlace">
         <div className="outside-container">
           <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./register' className="btn m-3 previous-button">Previous</Link>
+            <Link to='./register' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[3].slideTitle}</h2>
