@@ -18,18 +18,20 @@ class VotingMachine extends React.Component {
     }
     return (
       <main className="VotingMachine">
-        <h2>{this.props.slides[6].slideTitle}</h2>
-        <article>
-          <h5>{this.props.slides[6].slideBodyText}</h5>
-        </article>
+        <div className="voting-machine-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./checkIn' className="btn  m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[6].slideTitle}</h2>
+          <article>
+            <h5>{this.props.slides[6].slideBodyText}</h5>
+          </article>
 
-        <div>
-          <img src={this.props.slides[6].imageUrl} alt="Voting Machine"/>
-        </div>
+          <div>
+            <img src={this.props.slides[6].imageUrl} alt="Voting Machine"/>
+          </div>
 
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./checkIn' className="btn  m-3 previous-button">Previous</Link>
-          {nextButton}
         </div>
       </main>
     );

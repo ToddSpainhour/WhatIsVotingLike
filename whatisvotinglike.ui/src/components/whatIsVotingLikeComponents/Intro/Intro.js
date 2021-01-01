@@ -41,21 +41,22 @@ class Intro extends React.Component {
 
     return (
       <main className="Intro">
-      <h2>{this.props.slides[0].slideTitle}</h2>
-      <div className="intro-content-container">
-        <article>
-          <h5>{this.props.slides[0].slideBodyText}</h5>
-          <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
-          { answerResponse }
-        </article>
+        <div className="intro-container">
+          <nav className="navbar fixed-bottom module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./disclaimer' className="btn m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[0].slideTitle}</h2>
+          <div className="intro-content-container">
+            <article className="col-12">
+              <h5>{this.props.slides[0].slideBodyText}</h5>
+              <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
+              { answerResponse }
+            <img src={this.props.slides[0].imageUrl} className="col-md-3 col-sm-12" alt="Voter holding a sign that says Vote."/>
+            </article>
 
-        <img src={this.props.slides[0].imageUrl} alt="Voter holding a sign that says Vote."/>
+          </div>
       </div>
-
-      <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-        <Link to='./disclaimer' className="btn m-3 previous-button">Previous</Link>
-        {nextButton}
-      </nav>
     </main>
     );
   }

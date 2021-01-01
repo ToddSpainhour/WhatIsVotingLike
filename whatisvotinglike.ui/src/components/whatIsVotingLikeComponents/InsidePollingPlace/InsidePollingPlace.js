@@ -18,11 +18,13 @@ class InsidePollingPlace extends React.Component {
     }
     return (
       <main className="InsidePollingPlace">
-        <h2>{this.props.slides[4].slideTitle}</h2>
-        <h5>{this.props.slides[4].slideBodyText}</h5>
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./outsidePollingPlace' className="btn m-3 previous-button">Previous</Link>
-          {nextButton}
+        <div className="inside-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./outsidePollingPlace' className="btn m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[4].slideTitle}</h2>
+          <h5>{this.props.slides[4].slideBodyText}</h5>
         </div>
       </main>
     );

@@ -18,15 +18,16 @@ class Sticker extends React.Component {
     }
     return (
       <main className="Sticker">
-        <h2>{this.props.slides[7].slideTitle}</h2>
-        <article>
-          <h5>{this.props.slides[7].slideBodyText}</h5>
-          <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
-        </article>
-
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./votingMachine' className="btn m-3 previous-button">Previous</Link>
-          {nextButton}
+        <div className="sticker-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./votingMachine' className="btn m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[7].slideTitle}</h2>
+          <article>
+            <h5>{this.props.slides[7].slideBodyText}</h5>
+            <img src={this.props.slides[7].imageUrl} className="sticker-img" alt="I Voted Stickers"/>
+          </article>
         </div>
       </main>
     );

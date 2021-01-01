@@ -21,7 +21,6 @@ import CheckIn from '../components/whatIsVotingLikeComponents/CheckIn/CheckIn';
 import VotingMachine from '../components/whatIsVotingLikeComponents/VotingMachine/VotingMachine';
 import Sticker from '../components/whatIsVotingLikeComponents/Sticker/Sticker';
 import Conclusion from '../components/whatIsVotingLikeComponents/Conclusion/Conclusion';
-import Footer from '../components/shared/Footer/Footer';
 
 class App extends React.Component {
 state = {
@@ -162,7 +161,6 @@ render() {
         </Switch>
       </React.Fragment>
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
 .OutsidePollingPlace {
-  display: block;
-  font-family: $font-stack;
-  color: $text;
-  background-color: $background;
-  height: 100vh;
+  @include component;
+
+  .outside-container {
+    @include component-container;
+  }
 
   h2 {
     padding: $header-padding;
@@ -21,8 +21,6 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
     width: 100%;
     padding-right: 2rem;
 

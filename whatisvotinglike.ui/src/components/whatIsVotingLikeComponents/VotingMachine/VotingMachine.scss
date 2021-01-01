@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
 .VotingMachine {
-  display: block;
-  font-family: $font-stack;
-  background-color: $background;
-  color: $text;
-  height: 100vh;
+  @include component;
+
+  .voting-machine-container {
+    @include component-container;
+  }
 
   h2 {
     padding: $header-padding;
@@ -25,10 +25,8 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
     width: 100%;
-    padding-right: 2rem;
+
 
     .active-next-button {
       background-color: $active-nav-button-background-color;

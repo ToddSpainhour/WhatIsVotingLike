@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
 .Intro {
-  display: block;
-  font-family: $font-stack;
-  background-color: $background;
-  height: 100vh;
-  color: $text;
+  @include component;
+
+  .intro-container {
+    @include component-container;
+  }
 
   h2 {
     padding: $header-padding;
@@ -30,10 +30,7 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
-    width: 100%;
-    padding-right: 2rem;
+    position: static;
 
     .active-next-button {
       background-color: $active-nav-button-background-color;

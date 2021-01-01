@@ -1,11 +1,11 @@
 @import '../../../styles/variables';
 
 .InsidePollingPlace {
-  display: block;
-  font-family: $font-stack;
-  color: $text;
-  background-color: $background;
-  height: 100vh;
+  @include component;
+
+  .inside-container {
+    @include component-container;
+  }
 
   h2 {
     padding: $header-padding;
@@ -21,10 +21,7 @@
 
   .module-navigation {
     background-color: $border;
-    position: absolute;
-    bottom: 3.5rem;
     width: 100%;
-    padding-right: 2rem;
 
     .active-next-button {
       background-color: $active-nav-button-background-color;

@@ -18,15 +18,17 @@ class OutsidePollingPlace extends React.Component {
     }
     return (
       <main className="OutsidePollingPlace">
-        <h2>{this.props.slides[3].slideTitle}</h2>
-          <article>
-            <h5>{this.props.slides[3].slideBodyText}</h5>
-            <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
-          </article>
+        <div className="outside-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./register' className="btn m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[3].slideTitle}</h2>
+            <article>
+              <h5>{this.props.slides[3].slideBodyText}</h5>
+              <img src={this.props.slides[3].imageUrl} className="outside-image"alt="Campaign signs next to road" />
+            </article>
 
-        <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./register' className="btn m-3 previous-button">Previous</Link>
-          {nextButton}
         </div>
       </main>
     );

@@ -16,20 +16,21 @@ class Disclaimer extends React.Component {
     }
     return (
       <main className="Disclaimer">
-        <h2>{this.props.slides[1].slideTitle}</h2>
+        <div className="disclaimer-container">
+          <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
+            <Link to='./home' className="btn m-3 previous-button">Previous</Link>
+            {nextButton}
+          </nav>
+          <h2>{this.props.slides[1].slideTitle}</h2>
 
-        <article>
-          <h5>{this.props.slides[1].slideBodyText}</h5>
-          <input type="checkbox" id="disclaimer-checkbox" onChange={this.props.ChangeDisclaimerCompletedStatus} name="disclaimer-checkbox"/>
-          <label htmlFor="disclaimer-checkbox">I Understand</label>
-        </article>
+          <article>
+            <h5>{this.props.slides[1].slideBodyText}</h5>
+            <input type="checkbox" id="disclaimer-checkbox" onChange={this.props.ChangeDisclaimerCompletedStatus} name="disclaimer-checkbox"/>
+            <label htmlFor="disclaimer-checkbox">I Understand</label>
+          </article>
 
-        <img src={this.props.slides[1].imageUrl} className="disclaimer-image" alt="Polling Location"/>
-
-        <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-          <Link to='./home' className="btn m-3 previous-button">Previous</Link>
-          {nextButton}
-        </nav>
+          <img src={this.props.slides[1].imageUrl} className="disclaimer-image" alt="Polling Location"/>
+        </div>
       </main>
     );
   }

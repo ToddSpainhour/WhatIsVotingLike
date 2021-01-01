@@ -52,40 +52,39 @@ class Register extends React.Component {
 
       return (
         <main className="Register">
-          <h2>{this.props.slides[2].slideTitle}</h2>
-          <article>
-            <h5>{this.props.slides[2].slideBodyText}</h5>
-            <h5 className="slide-instructions">Click on the buttons below to see what it takes to register to vote in Tennessee.</h5>
+          <div className="register-container">
+            <nav className="navbar fixed-bottom module-navigation d-flex justify-content-sm-end justify-content-center">
+              <Link to='./intro' className="btn m-3 previous-button">Previous</Link>
+              {nextButton}
+            </nav>
+            <h2>{this.props.slides[2].slideTitle}</h2>
+            <article>
+              <h5>{this.props.slides[2].slideBodyText}</h5>
+              <h5 className="slide-instructions">Click on the buttons below to see what it takes to register to vote in Tennessee.</h5>
 
-            {/* <div className="rollover-container"> */}
-              <div className="box-container">
-                <div className="box-1">
-                  <button className="btn btn-light citizen-btn reveal-btn" onClick={() => this.setState({ citizenBtnClicked: true })}>1</button>
+                <div className="box-container">
+                  <div className="box-1">
+                    <button className="btn btn-light citizen-btn reveal-btn" onClick={() => this.setState({ citizenBtnClicked: true })}>1</button>
+                  </div>
+                  <div className="box-2">
+                    <button className="btn btn-light tn-resident-btn reveal-btn" onClick={() => this.setState({ tnResidentBtnClicked: true })}>2</button>
+                  </div>
+                  <div className="box-3">
+                    <button className="btn btn-light age-btn reveal-btn" onClick={() => this.setState({ ageBtnClicked: true })}>3</button>
+                  </div>
+                  <div className="box-4">
+                    <button className="btn btn-light felony-btn reveal-btn" onClick={() => this.setState({ felonyBtnClicked: true })}>4</button>
+                  </div>
                 </div>
-                <div className="box-2">
-                  <button className="btn btn-light tn-resident-btn reveal-btn" onClick={() => this.setState({ tnResidentBtnClicked: true })}>2</button>
-                </div>
-                <div className="box-3">
-                  <button className="btn btn-light age-btn reveal-btn" onClick={() => this.setState({ ageBtnClicked: true })}>3</button>
-                </div>
-                <div className="box-4">
-                  <button className="btn btn-light felony-btn reveal-btn" onClick={() => this.setState({ felonyBtnClicked: true })}>4</button>
-                </div>
-              </div>
 
-              <div className="rollover-message-container">
-                {citizenText}
-                {residentText}
-                {ageText}
-                {felonyText}
-              </div>
-            {/* </div> */}
+                <div className="rollover-message-container">
+                  {citizenText}
+                  {residentText}
+                  {ageText}
+                  {felonyText}
+                </div>
 
-          </article>
-
-          <div className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./intro' className="btn m-3 previous-button">Previous</Link>
-            {nextButton}
+            </article>
           </div>
         </main>
       );
