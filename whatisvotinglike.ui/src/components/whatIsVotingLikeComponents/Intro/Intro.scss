@@ -29,43 +29,26 @@
   }
 
   .module-navigation {
-    background-color: $border;
-    position: static;
+    @include navbar;
 
     .active-next-button {
-      background-color: $active-nav-button-background-color;
-      color: $active-nav-button-text-color;
-      font-weight: $nav-btn-font-weight;
-      width: $nav-button-width;
+      @include active-next-button;
     }
 
     .active-next-button:hover {
-      background-color: $hover-active-nav-button-background-color;
-      color: $hover-active-nav-button-text-color;
-      font-weight: $nav-btn-font-weight;
-      width: $nav-button-width;
+      @include active-next-button-hover;
     }
 
     .disabled-next-button {
-      background-color: $disabled-nav-button-background-color;
-      color: $disabled-nav-button-text-color;
-      font-weight: $nav-btn-font-weight;
-      width: $nav-button-width;
-      cursor: $disabled-cursor;
+      @include disabled-next-button;
     }
 
     .previous-button {
-      background-color: $active-nav-button-background-color;
-      color: $active-nav-button-text-color;
-      font-weight: $nav-btn-font-weight;
-      width: $nav-button-width;
+      @include previous-button;
     }
 
     .previous-button:hover {
-      background-color: $hover-active-nav-button-background-color;
-      color:$hover-active-nav-button-text-color;
-      font-weight: $nav-btn-font-weight;
-      width: $nav-button-width;
+      @include previous-button-hover;
     }
   }
 }
