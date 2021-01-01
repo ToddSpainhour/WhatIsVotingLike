@@ -52,6 +52,8 @@ $disabled-cursor: no-drop;
   font-family: $font-stack;
   color: $text;
   background-color: $color1;
+  background-image: url('../images/black-bkg-square-1.png');
+  background-repeat: repeat;
 }
 
 @mixin component-container {
