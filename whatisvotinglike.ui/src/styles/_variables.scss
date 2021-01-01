@@ -1,4 +1,4 @@
-$color1: darkgrey; 
+$color1: #151515; 
 $background: #02203a;
 $border: #17314a;
 $text: #a7b8c8;
@@ -24,7 +24,7 @@ $body-text-size: 1.5rem;
 
 
 // navigation
-$nav-button-width: 5%;
+$nav-button-width: auto;
 $nav-btn-font-weight: bold;
 
 
@@ -51,8 +51,7 @@ $disabled-cursor: no-drop;
   width: 100vw;
   font-family: $font-stack;
   color: $text;
-  background-color: $border;
-  background-color: lightslategrey;
+  background-color: $color1;
 }
 
 @mixin component-container {
