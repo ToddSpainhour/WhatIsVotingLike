@@ -59,16 +59,16 @@ class CheckIn extends React.Component {
 
     let nextButton;
     if (this.props.checkInComplete === true) {
-      nextButton = <Link to='./votingMachine' className="btn m-3 active-next-button">Next</Link>;
+      nextButton = <Link to='./votingMachine' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
 
     return (
       <main className="CheckIn">
         <div className="checkin-container">
           <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./insidePollingPlace' className="btn previous-button m-3">Previous</Link>
+            <Link to='./insidePollingPlace' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[5].slideTitle}</h2>
