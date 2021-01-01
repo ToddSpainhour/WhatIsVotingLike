@@ -10,15 +10,15 @@ class Disclaimer extends React.Component {
 
     let nextButton;
     if (this.props.disclaimerComplete === true) {
-      nextButton = <Link to='./intro' className="btn active-next-button m-3">Next</Link>;
+      nextButton = <Link to='./intro' className="btn active-next-button">Next</Link>;
     } else {
-      nextButton = <button className="btn m-3 disabled-next-button">Next</button>;
+      nextButton = <button className="btn disabled-next-button">Next</button>;
     }
     return (
       <main className="Disclaimer">
         <div className="disclaimer-container">
           <nav className="module-navigation d-flex justify-content-sm-end justify-content-center">
-            <Link to='./home' className="btn m-3 previous-button">Previous</Link>
+            <Link to='./home' className="btn previous-button">Previous</Link>
             {nextButton}
           </nav>
           <h2>{this.props.slides[1].slideTitle}</h2>
