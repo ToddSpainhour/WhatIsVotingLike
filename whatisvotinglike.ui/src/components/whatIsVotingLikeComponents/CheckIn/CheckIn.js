@@ -64,6 +64,13 @@ class CheckIn extends React.Component {
       nextButton = <button className="btn disabled-next-button">Next</button>;
     }
 
+    let dragAndDropAreaMessage;
+    if (this.state.selectedAnswerId === '') {
+      dragAndDropAreaMessage = <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}><p>Drag and drop your answer here.</p></div>;
+    } else {
+      dragAndDropAreaMessage = <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}></div>;
+    }
+
     return (
       <main className="CheckIn">
         <div className="checkin-container">
@@ -83,7 +90,7 @@ class CheckIn extends React.Component {
 
           <div className="drag-and-drop-container">
             <div draggable className="draggable col-6">{idToShow}</div>
-            <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}>Drop and drop your answer here.</div>
+            {dragAndDropAreaMessage}
           </div>
           <div>{AnswerResponse}</div>
         </div>

@@ -63,17 +63,16 @@
 }
 
 .droppable {
-  color: $teal;
+  color: $text;
   background-color: $border;
-  font-weight: bolder;
   width: 150px;
   height: 75px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .photo-id-types {
+  font-weight: bolder;
   background-color: $border;
   border: 3px solid $teal;
   border-radius: 3px;
