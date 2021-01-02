@@ -59,19 +59,24 @@
 }
 
 .draggable {
-  background-color: $border;
+  background-color: $background;
 }
 
 .droppable {
+  color: $teal;
   background-color: $border;
+  font-weight: bolder;
   width: 150px;
-  height: 100px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-id-types {
   background-color: $border;
-  border: 5px solid $green;
-  border-radius: 25px;
+  border: 3px solid $teal;
+  border-radius: 3px;
 }
 
 .drag-and-drop-container {
