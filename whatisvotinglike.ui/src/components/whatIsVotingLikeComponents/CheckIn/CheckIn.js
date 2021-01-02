@@ -36,7 +36,8 @@ class CheckIn extends React.Component {
           key={typeOfPhotoId.type}
           className="photo-id-types draggable"
           id={typeOfPhotoId.type.split(' ').join('').toLocaleLowerCase()}
-          onDragStart={(e) => this.onDragStart(e, typeOfPhotoId.id)}> {typeOfPhotoId.type}</p>);
+          onDragStart={(e) => this.onDragStart(e, typeOfPhotoId.id)}> {typeOfPhotoId.type}
+          </p>);
 
     let AnswerResponse;
     if (this.state.selectedAnswerId !== '' && this.state.selectedAnswerId === 'collegestudentidwithyourphoto') {
@@ -64,13 +65,6 @@ class CheckIn extends React.Component {
       nextButton = <button className="btn disabled-next-button">Next</button>;
     }
 
-    let dragAndDropAreaMessage;
-    if (this.state.selectedAnswerId === '') {
-      dragAndDropAreaMessage = <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}><p>Drag and drop your answer here.</p></div>;
-    } else {
-      dragAndDropAreaMessage = <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}></div>;
-    }
-
     return (
       <main className="CheckIn">
         <div className="checkin-container">
@@ -79,10 +73,13 @@ class CheckIn extends React.Component {
             {nextButton}
           </nav>
           <h2>{this.props.slides[5].slideTitle}</h2>
-          <article>
+          <article className="col-12">
             <h5>{this.props.slides[5].slideBodyText}</h5>
             <div className="checkin-content-container">
-              <h5>Out of the options below, which is NOT a valid photo ID when voting in Tennessee? Drag and drop your answer.</h5>
+              <div>
+                <h4>Out of the options below, which is NOT a valid photo ID when voting in Tennessee?</h4>
+                <p>Drag and drop your answer to the empty rectangle below.</p>
+              </div>
               <div>
               </div>
             </div>
@@ -90,7 +87,7 @@ class CheckIn extends React.Component {
 
           <div className="drag-and-drop-container">
             <div draggable className="draggable col-6">{idToShow}</div>
-            {dragAndDropAreaMessage}
+            <div id="drop-zone" className="droppable col-6" onDragOver={(e) => e.preventDefault()} onDrop={(e) => this.onDrop(e)}></div>
           </div>
           <div>{AnswerResponse}</div>
         </div>

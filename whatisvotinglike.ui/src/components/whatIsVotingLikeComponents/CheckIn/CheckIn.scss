@@ -9,7 +9,7 @@
   
   .checkin-content-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     .photo-id-container {
       align-self: center;
@@ -67,6 +67,7 @@
   background-color: $border;
   width: 150px;
   height: 75px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
