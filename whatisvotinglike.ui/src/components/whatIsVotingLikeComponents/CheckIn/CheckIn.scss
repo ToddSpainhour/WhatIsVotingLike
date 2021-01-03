@@ -9,7 +9,7 @@
   
   .checkin-content-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
     .photo-id-container {
       align-self: center;
@@ -59,19 +59,24 @@
 }
 
 .draggable {
-  background-color: $border;
+  background-color: $background;
 }
 
 .droppable {
+  color: $text;
   background-color: $border;
   width: 150px;
-  height: 100px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-id-types {
+  font-weight: bolder;
   background-color: $border;
-  border: 5px solid $green;
-  border-radius: 25px;
+  border: 3px solid $teal;
+  border-radius: 3px;
 }
 
 .drag-and-drop-container {
