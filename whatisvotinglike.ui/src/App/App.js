@@ -26,6 +26,7 @@ class App extends React.Component {
 state = {
   trainingModules: [],
   slides: [],
+  currentTrainingModuleId: null,
   introComplete: false,
   disclaimerComplete: false,
   registerComplete: false,
@@ -47,6 +48,10 @@ getSlides = (selectedTrainingModuleId) => {
     .then((slides) => {
       this.setState({ slides });
     });
+}
+
+getCurrentTrainingModuleId = (selectedTrainingModuleId) => {
+  this.setState({ currentTrainingModuleId: selectedTrainingModuleId });
 }
 
 ChangeDisclaimerCompletedStatus = () => {
@@ -88,10 +93,19 @@ render() {
       <React.Fragment>
         <Switch>
 
-          <Route exact path='/home' render={(props) => <Home {...props} getSlides={this.getSlides} trainingModules={this.state.trainingModules} slides={this.state.slides}/>} />
+          <Route exact path='/home'
+            render={(props) => <Home {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
+            getCurrentTrainingModuleId={this.getCurrentTrainingModuleId}
+            getSlides={this.getSlides}
+            trainingModules={this.state.trainingModules}
+            slides={this.state.slides}
+            />}
+          />
 
           <Route path='/disclaimer'
             render={(props) => <Disclaimer {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeDisclaimerCompletedStatus={this.ChangeDisclaimerCompletedStatus}
             disclaimerComplete={this.state.disclaimerComplete}
@@ -100,6 +114,7 @@ render() {
 
           <Route path='/intro'
             render={(props) => <Intro {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeIntroCompletedStatus={this.ChangeIntroCompletedStatus}
             introComplete={this.state.introComplete}
@@ -108,6 +123,7 @@ render() {
 
           <Route path='/register'
             render={(props) => <Register {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeRegisterCompletedStatus={this.ChangeRegisterCompletedStatus}
             registerComplete={this.state.registerComplete}
@@ -116,6 +132,7 @@ render() {
 
           <Route path='/outsidePollingPlace'
             render={(props) => <OutsidePollingPlace {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeOutsideCompletedStatus={this.ChangeOutsideCompletedStatus}
             outsideComplete={this.state.outsideComplete}
@@ -124,6 +141,7 @@ render() {
 
           <Route path='/insidePollingPlace'
             render={(props) => <InsidePollingPlace {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeInsideCompletedStatus={this.ChangeInsideCompletedStatus}
             insideComplete={this.state.insideComplete}
@@ -132,6 +150,7 @@ render() {
 
           <Route path='/checkIn'
             render={(props) => <CheckIn {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeCheckInCompletedStatus={this.ChangeCheckInCompletedStatus}
             checkInComplete={this.state.checkInComplete}
@@ -140,6 +159,7 @@ render() {
 
           <Route path='/votingMachine'
             render={(props) => <VotingMachine {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeVotingMachineCompletedStatus={this.ChangeVotingMachineCompletedStatus}
             votingMachineComplete={this.state.votingMachineComplete}
@@ -148,6 +168,7 @@ render() {
 
           <Route path='/sticker'
             render={(props) => <Sticker {...props}
+            currentTrainingModuleId={this.state.currentTrainingModuleId}
             slides={this.state.slides}
             ChangeStickerCompletedStatus={this.ChangeStickerCompletedStatus}
             stickerComplete={this.state.stickerComplete}
