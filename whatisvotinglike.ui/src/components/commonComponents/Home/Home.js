@@ -8,7 +8,13 @@ class Home extends React.Component {
   render() {
     const { trainingModules } = this.props;
 
-    const buildModuleCards = trainingModules.map((module) => <SingleModuleCard module={module} getSlides={this.props.getSlides} key={module.trainingModuleId}/>);
+    const buildModuleCards = trainingModules.map((module) => <SingleModuleCard
+        module={module}
+        currentTrainingModuleId={this.props.currentTrainingModuleId}
+        getCurrentTrainingModuleId={this.props.getCurrentTrainingModuleId}
+        getSlides={this.props.getSlides}
+        key={module.trainingModuleId}
+      />);
 
     return (
       <div className="Home">

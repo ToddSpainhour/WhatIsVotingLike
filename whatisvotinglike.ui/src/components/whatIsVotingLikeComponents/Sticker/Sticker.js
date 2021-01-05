@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './Sticker.scss';
 
@@ -10,6 +10,10 @@ class Sticker extends React.Component {
   }
 
   render() {
+    if (this.props.slides.length === 0) {
+      return <Redirect to="/home" />;
+    }
+
     let nextButton;
     if (this.props.stickerComplete === true) {
       nextButton = <Link to='./conclusion' className="btn active-next-button">Next</Link>;

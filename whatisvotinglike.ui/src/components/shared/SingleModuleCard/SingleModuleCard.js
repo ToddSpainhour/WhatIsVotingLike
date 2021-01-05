@@ -9,6 +9,7 @@ class SingleModuleCard extends React.Component {
     const loadSelectedModule = () => {
       const selectedTrainingModuleId = this.props.module.trainingModuleId;
       this.props.getSlides(selectedTrainingModuleId);
+      this.props.getCurrentTrainingModuleId(selectedTrainingModuleId);
     };
 
     return (

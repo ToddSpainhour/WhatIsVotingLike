@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './VotingMachine.scss';
 
@@ -10,6 +10,10 @@ class VotingMachine extends React.Component {
   }
 
   render() {
+    if (this.props.slides.length === 0) {
+      return <Redirect to="/home" />;
+    }
+
     let nextButton;
     if (this.props.votingMachineComplete === true) {
       nextButton = <Link to='./sticker' className="btn active-next-button">Next</Link>;

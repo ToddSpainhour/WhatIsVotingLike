@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './CheckIn.scss';
 
@@ -31,6 +31,10 @@ class CheckIn extends React.Component {
   }
 
   render() {
+    if (this.props.slides.length === 0) {
+      return <Redirect to="/home" />;
+    }
+
     const idToShow = this.state.photoIdOptions.map((typeOfPhotoId) => <p
           draggable="true"
           key={typeOfPhotoId.type}
