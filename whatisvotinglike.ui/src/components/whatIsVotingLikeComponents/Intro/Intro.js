@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import Slider from '../../commonComponents/Slider/Slider';
 
@@ -23,6 +23,10 @@ class Intro extends React.Component {
   }
 
   render() {
+    if (this.props.slides.length === 0) {
+      return <Redirect to="/home" />;
+    }
+
     let nextButton;
     if (this.props.introComplete === true) {
       nextButton = <Link to='./register' className="btn active-next-button">Next</Link>;

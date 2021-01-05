@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './Register.scss';
 
@@ -21,6 +21,10 @@ class Register extends React.Component {
     }
 
     render() {
+      if (this.props.slides.length === 0) {
+        return <Redirect to="/home" />;
+      }
+
       let citizenText;
       if (this.state.citizenBtnClicked === true) {
         citizenText = <h6 className="revealed-text">You must be a U.S. Citizen</h6>;

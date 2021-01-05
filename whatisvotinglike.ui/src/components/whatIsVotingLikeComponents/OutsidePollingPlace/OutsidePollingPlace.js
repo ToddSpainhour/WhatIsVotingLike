@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './OutsidePollingPlace.scss';
 
@@ -10,6 +10,10 @@ class OutsidePollingPlace extends React.Component {
   }
 
   render() {
+    if (this.props.slides.length === 0) {
+      return <Redirect to="/home" />;
+    }
+
     let nextButton;
     if (this.props.outsideComplete === true) {
       nextButton = <Link to='./insidePollingPlace' className="btn active-next-button">Next</Link>;
