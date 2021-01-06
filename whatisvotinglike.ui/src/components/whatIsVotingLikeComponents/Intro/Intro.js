@@ -54,6 +54,13 @@ class Intro extends React.Component {
       answerResponse = '';
     }
 
+    let dynamicSlider;
+    if (this.state.submittedAnswer === false) {
+      dynamicSlider = <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer} submittedAnswer={this.state.submittedAnswer}/>;
+    } else {
+      dynamicSlider = <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer} submittedAnswer={this.state.submittedAnswer}/>;
+    }
+
     return (
       <main className="Intro">
         <div className="intro-container">
@@ -65,7 +72,7 @@ class Intro extends React.Component {
           <div className="intro-content-container">
             <article className="col-12">
               <h5>{this.props.slides[0].slideBodyText}</h5>
-              <Slider sliderValue={this.state.sliderValue} changeSliderValue={this.changeSliderValue} submitAnswer={this.submitAnswer}/>
+              { dynamicSlider }
               { answerResponse }
             <img src={this.props.slides[0].imageUrl} className="col-md-3 col-sm-12" alt="Voter holding a sign that says Vote."/>
             </article>
