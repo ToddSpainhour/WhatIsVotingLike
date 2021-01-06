@@ -36,16 +36,21 @@ class Intro extends React.Component {
 
     let answerResponse;
     if (this.state.submittedAnswer === true && this.state.sliderValue >= 99) {
-      // console.log('this.state.sliderValue type is: ', this.state.sliderValue);
-      answerResponse = <h6>That's too high.</h6>;
+      answerResponse = <div>
+                         <h5>You picked {this.state.sliderValue}%. That's too high.</h5>
+                         <h5>As of September 2020, 98% of Tennesseans chose to cast their ballot in person.</h5>
+                       </div>;
     } else if (this.state.submittedAnswer === true && this.state.sliderValue <= 97) {
-      // console.log('this.state.sliderValue is: ', this.state.sliderValue);
-      answerResponse = <h6>That's too low!</h6>;
+      answerResponse = <div>
+                          <h5>You picked {this.state.sliderValue}%, but that's too low!</h5>
+                          <h5>As of September 2020, 98% of Tennesseans chose to cast their ballot in person.</h5>
+                        </div>;
     } else if (this.state.submittedAnswer === true && this.state.sliderValue == 98) {
-      // console.log('this.state.sliderValue is: ', this.state.sliderValue);
-      answerResponse = <h6>That's exactly right!</h6>;
+      answerResponse = <div>
+                        <h5>You're exactly right!</h5>
+                        <h5>As of September 2020, 98% of Tennesseans chose to cast their ballot in person.</h5>
+                       </div>;
     } else if (this.state.submittedAnswer === false) {
-      console.log('else if with blank anserResponse');
       answerResponse = '';
     }
 
