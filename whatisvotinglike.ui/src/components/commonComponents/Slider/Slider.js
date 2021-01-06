@@ -6,7 +6,7 @@ class Slider extends React.Component {
   render() {
     return (
       <div className="Slider">
-        <h3>What percentage of voters in Tennessee choose to vote in person?</h3>
+        <h5>What percentage of voters in Tennessee choose to vote in person?</h5>
         <div className="slidecontainer">
           <input type="range" min="1" max="100" defaultValue={this.props.value} className="slider" onInput={this.props.changeSliderValue}/>
           <output id="output"></output>
