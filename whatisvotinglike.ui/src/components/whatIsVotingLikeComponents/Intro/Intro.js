@@ -35,11 +35,17 @@ class Intro extends React.Component {
     }
 
     let answerResponse;
-    if (this.state.submittedAnswer === true && this.state.sliderValue > 75) {
+    if (this.state.submittedAnswer === true && this.state.sliderValue >= 99) {
+      // console.log('this.state.sliderValue type is: ', this.state.sliderValue);
       answerResponse = <h6>That's too high.</h6>;
-    } else if (this.state.submittedAnswer === true && this.state.sliderValue < 75) {
+    } else if (this.state.submittedAnswer === true && this.state.sliderValue <= 97) {
+      // console.log('this.state.sliderValue is: ', this.state.sliderValue);
       answerResponse = <h6>That's too low!</h6>;
-    } else {
+    } else if (this.state.submittedAnswer === true && this.state.sliderValue == 98) {
+      // console.log('this.state.sliderValue is: ', this.state.sliderValue);
+      answerResponse = <h6>That's exactly right!</h6>;
+    } else if (this.state.submittedAnswer === false) {
+      console.log('else if with blank anserResponse');
       answerResponse = '';
     }
 
