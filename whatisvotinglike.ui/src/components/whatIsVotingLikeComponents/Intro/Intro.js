@@ -45,7 +45,7 @@ class Intro extends React.Component {
                           <h5>You picked {this.state.sliderValue}%, but that's too low!</h5>
                           <h5>As of September 2020, 98% of Tennesseans chose to cast their ballot in person.</h5>
                         </div>;
-    } else if (this.state.submittedAnswer === true && this.state.sliderValue == 98) {
+    } else if (this.state.submittedAnswer === true && this.state.sliderValue === '98') {
       answerResponse = <div>
                         <h5>You're exactly right!</h5>
                         <h5>As of September 2020, 98% of Tennesseans chose to cast their ballot in person.</h5>
