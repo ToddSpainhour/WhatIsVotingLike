@@ -1,31 +1,46 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+import SingleConclusionCard from '../../shared/ConclusionCard/ConclusionCard';
 
 import './Conclusion.scss';
 
 class Conclusion extends React.Component {
+  state = {
+    conclusionCards: [
+      {
+        id: 1,
+        title: 'Need to register to vote in Tennessee?',
+        btnText: 'Visit Tennessee\'s Online Voter Registration Portal',
+        url: 'https://ovr.govote.tn.gov/',
+      },
+      {
+        id: 2,
+        title: 'Already registered? Confirm your registration by clicking the button below.',
+        btnText: 'Confirm Your Registration in Tennessee',
+        url: 'https://tnmap.tn.gov/voterlookup/',
+      },
+      {
+        id: 3,
+        title: 'Learn everything you need to know about elections in Tennessee by visiting GoVoteTN.com',
+        btnText: 'Visit GoVoteTN.com',
+        url: 'https://govotetn.com/',
+      },
+    ],
+  }
+
   render() {
+    const buildConclusionCards = this.state.conclusionCards.map((singleCard) => <SingleConclusionCard
+    title={singleCard.title}
+    url={singleCard.url}
+    btnText={singleCard.btnText}
+    key={singleCard.id}
+      />);
+
     return (
       <div className="Conclusion">
-        <h5>Conclusion</h5>
-        <Link to='./home' className="btn btn-small complete-training-button">Back to Home</Link>
-
-        <div className="register-button-container">
-              <div>
-                <h6>Need to register to vote in Tennessee?</h6>
-                <a className="btn btn-light" href="https://ovr.govote.tn.gov/" target="_blank" rel="noreferrer nofollow">Visit Tennessee's Online Voter Registration Portal.</a>
-              </div>
-              <div>
-                <h6>Already registered? Confirm your registration by clicking the link below.</h6>
-                <a className="btn btn-light" href="https://tnmap.tn.gov/voterlookup/" target="_blank" rel="noreferrer nofollow">Confirm Your Registration in Tennessee</a>
-              </div>
-              <div>
-                <h6>Learn everything you need to know about elections in Tennessee by visiting GoVoteTN.com</h6>
-                <a className="btn btn-light" href="https://govotetn.com/" target="_blank" rel="noreferrer nofollow">Visit GoVoteTN.com</a>
-              </div>
-            </div>
-
+          { buildConclusionCards }
       </div>
     );
   }
