@@ -2,9 +2,11 @@
 
 .Conclusion {
   display: block;
+  justify-content: space-around;
   color: $text;
   background-image: url('../../../images/blue-bkg-square-1.png');
   background-repeat: repeat;
+  height: 100vh;
 
   h2 {
     padding: $header-padding;
@@ -16,6 +18,11 @@
   h5 {
     font-size: $body-text-size;
     padding: $body-text-padding;
+  }
+
+  .conclusion-card-container {
+    display: flex;
+    justify-content: center;
   }
 
   .register-button-container {
