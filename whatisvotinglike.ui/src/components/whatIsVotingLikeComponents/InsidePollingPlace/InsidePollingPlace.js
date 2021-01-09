@@ -29,6 +29,7 @@ class InsidePollingPlace extends React.Component {
           </nav>
           <h2>{this.props.slides[4].slideTitle}</h2>
           <h5>{this.props.slides[4].slideBodyText}</h5>
+          <img src={this.props.slides[4].imageUrl} className="polling-location-image" alt="Polling Location"/>
         </div>
       </main>
     );
