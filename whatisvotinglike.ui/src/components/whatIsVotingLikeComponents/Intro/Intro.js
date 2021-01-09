@@ -73,8 +73,8 @@ class Intro extends React.Component {
             <article className="col-12">
               <h5>{this.props.slides[0].slideBodyText}</h5>
               { dynamicSlider }
+                <img src={this.props.slides[0].imageUrl} className="col-md-3 col-sm-12" alt="Voter holding a sign that says Vote."/>
               { answerResponse }
-            <img src={this.props.slides[0].imageUrl} className="col-md-3 col-sm-12" alt="Voter holding a sign that says Vote."/>
             </article>
 
           </div>
