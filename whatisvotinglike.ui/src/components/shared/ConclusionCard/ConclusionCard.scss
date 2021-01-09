@@ -2,8 +2,17 @@
 
 .ConclusionCard {
   display: block;
+  flex-direction: column;
   background-color: $border;
   padding: 1rem;
   border: 5px $background solid;
-  // height: 25vh;
+  height: 10rem;
+
+  .btn {
+    background-color: $teal;
+    &:hover {
+      color: $text;
+      background-color: $dark-purple;
+    }
+  }
 }

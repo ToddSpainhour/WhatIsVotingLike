@@ -41,14 +41,14 @@ class Conclusion extends React.Component {
     return (
       <div className="Conclusion">
         <h2>One Last Thing</h2>
-        <h5>For something as important and voting, you need to seek out accurate election information.
-          In Tennessee, that source of information is your state and county election officials.
+        <h5>For something as important as voting, you need to seek out accurate information.
+          In Tennessee, that trusted source is your state and county election officials.
         </h5>
         <div className="conclusion-card-container">
           { buildConclusionCards }
         </div>
         <div>
-          <Link to="/home" className="btn btn-small btn-light">Back to Home Page</Link>
+          <Link to="/home" className="btn btn-small back-to-home-btn">Back to Home Page</Link>
         </div>
       </div>
     );
