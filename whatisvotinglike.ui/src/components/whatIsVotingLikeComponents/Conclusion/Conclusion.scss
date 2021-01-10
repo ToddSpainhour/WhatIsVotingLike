@@ -25,17 +25,13 @@
     justify-content: center;
   }
 
-  .register-button-container {
-    padding-top: 3rem;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .complete-training-button {
-    background-color: $green;
+  .back-to-home-btn {
+    background-color: $teal;
+    margin-top: 10rem;
     &:hover {
       color: $text;
       background-color: $dark-purple;
     }
-  }
+  } 
+
 }

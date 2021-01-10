@@ -19,6 +19,10 @@
     padding: $body-text-padding;
   }
 
+  .polling-location-image {
+    width: 50%;
+  }
+
   .module-navigation {
     @include navbar;
 
