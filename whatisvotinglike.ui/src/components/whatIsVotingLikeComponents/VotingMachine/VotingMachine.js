@@ -6,7 +6,7 @@ import './VotingMachine.scss';
 
 class VotingMachine extends React.Component {
   componentDidMount() {
-    setTimeout(this.props.ChangeVotingMachineCompletedStatus, 5000);
+    setTimeout(this.props.ChangeVotingMachineCompletedStatus, 4000);
   }
 
   render() {

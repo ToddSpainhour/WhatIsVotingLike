@@ -6,7 +6,7 @@ import './InsidePollingPlace.scss';
 
 class InsidePollingPlace extends React.Component {
   componentDidMount() {
-    setTimeout(this.props.ChangeInsideCompletedStatus, 100);
+    setTimeout(this.props.ChangeInsideCompletedStatus, 4000);
   }
 
   render() {

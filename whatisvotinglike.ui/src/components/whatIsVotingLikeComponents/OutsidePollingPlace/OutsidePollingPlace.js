@@ -6,7 +6,7 @@ import './OutsidePollingPlace.scss';
 
 class OutsidePollingPlace extends React.Component {
   componentDidMount() {
-    setTimeout(this.props.ChangeOutsideCompletedStatus, 100);
+    setTimeout(this.props.ChangeOutsideCompletedStatus, 4000);
   }
 
   render() {

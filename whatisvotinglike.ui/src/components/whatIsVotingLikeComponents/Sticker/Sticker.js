@@ -6,7 +6,7 @@ import './Sticker.scss';
 
 class Sticker extends React.Component {
   componentDidMount() {
-    setTimeout(this.props.ChangeStickerCompletedStatus, 500);
+    setTimeout(this.props.ChangeStickerCompletedStatus, 4000);
   }
 
   render() {
