@@ -28,6 +28,10 @@
     display: flex;
   }
 
+  .dynamic-response-container {
+    padding-top: 1rem;
+  }
+
   .module-navigation {
     @include navbar;
 
